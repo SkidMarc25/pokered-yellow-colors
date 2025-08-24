@@ -40,7 +40,7 @@ PewterGymBrockPostBattle:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, PewterGymResetScripts
-	ld a, PAD_CTRL_PAD
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 ; fallthrough
 PewterGymScriptReceiveTM34:

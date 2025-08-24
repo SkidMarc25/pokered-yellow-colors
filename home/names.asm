@@ -4,7 +4,7 @@ GetMonName::
 	push af
 	ld a, BANK(MonsterNames)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	ld [MBC1RomBank], a
 	ld a, [wNamedObjectIndex]
 	dec a
 	ld hl, MonsterNames
@@ -20,7 +20,7 @@ GetMonName::
 	pop de
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	ld [MBC1RomBank], a
 	pop hl
 	ret
 

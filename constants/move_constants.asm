@@ -170,6 +170,21 @@
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
 	const SUBSTITUTE   ; a4
+	const MUD_SLAP
+	const POISON_JAB
+	const ROCK_TOMB
+	const LUNGE
+	const SILVER_WIND
+	const METAL_CLAW
+	const IRON_DEFENSE
+	const IRON_TAIL
+	const MAGNET_BOMB
+	const FAIRY_WIND
+	const SWEET_KISS
+	const DAZZLE
+	const FEINT_ATTACK
+	const DRAGON_CLAW
+	const SHADOW_BALL
 	const STRUGGLE     ; a5
 DEF NUM_ATTACKS EQU const_value - 1
 

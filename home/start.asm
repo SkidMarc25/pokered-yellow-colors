@@ -1,10 +1,10 @@
 _Start::
-	cp BOOTUP_A_CGB
-	jr z, .cgb
+	cp GBC
+	jr z, .gbc
 	xor a
 	jr .ok
-.cgb
+.gbc
 	ld a, TRUE
 .ok
-	ldh [hCGB], a
+	ldh [hGBC], a
 	jp Init

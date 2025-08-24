@@ -41,8 +41,8 @@ ViridianMartDefaultScript:
 	ret
 
 .PlayerMovement:
-	db PAD_LEFT, 1
-	db PAD_UP, 2
+	db D_LEFT, 1
+	db D_UP, 2
 	db -1 ; end
 
 ViridianMartOaksParcelScript:
@@ -97,3 +97,6 @@ ViridianMartYoungsterText:
 ViridianMartCooltrainerMText:
 	text_far _ViridianMartCooltrainerMText
 	text_end
+
+ViridianMartClerkText:
+   script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL

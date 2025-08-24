@@ -145,7 +145,7 @@ SECTION "OAM Buffer", WRAM0
 ; buffer for OAM data. Copied to OAM by DMA
 wShadowOAM::
 ; wShadowOAMSprite00 - wShadowOAMSprite39
-FOR n, OAM_COUNT
+FOR n, NUM_SPRITE_OAM_STRUCTS
 wShadowOAMSprite{02d:n}:: sprite_oam_struct wShadowOAMSprite{02d:n}
 ENDR
 wShadowOAMEnd::
@@ -154,13 +154,13 @@ wShadowOAMEnd::
 SECTION "Tilemap", WRAM0
 
 ; buffer for tiles that are visible on screen (20 columns by 18 rows)
-wTileMap:: ds SCREEN_AREA
+wTileMap:: ds SCREEN_WIDTH * SCREEN_HEIGHT
 
 ; This union spans 480 bytes.
 UNION
 ; buffer for temporarily saving and restoring current screen's tiles
 ; (e.g. if menus are drawn on top)
-wTileMapBackup:: ds SCREEN_AREA
+wTileMapBackup:: ds SCREEN_WIDTH * SCREEN_HEIGHT
 
 NEXTU
 ; buffer for the blocks surrounding the player (6 columns by 5 rows of 4x4-tile blocks)
@@ -170,7 +170,7 @@ NEXTU
 ; buffer for temporarily saving and restoring shadow OAM
 wShadowOAMBackup::
 ; wShadowOAMBackupSprite00 - wShadowOAMBackupSprite39
-FOR n, OAM_COUNT
+FOR n, NUM_SPRITE_OAM_STRUCTS
 wShadowOAMBackupSprite{02d:n}:: sprite_oam_struct wShadowOAMBackupSprite{02d:n}
 ENDR
 wShadowOAMBackupEnd::
@@ -346,7 +346,7 @@ wNPCMovementScriptBank:: db
 
 ; This union spans 180 bytes.
 UNION
-wVermilionDockTileMapBuffer:: ds 5 * TILEMAP_WIDTH + SCREEN_WIDTH
+wVermilionDockTileMapBuffer:: ds 5 * BG_MAP_WIDTH + SCREEN_WIDTH
 wVermilionDockTileMapBufferEnd::
 
 NEXTU
@@ -922,7 +922,7 @@ UNION
 wSerialOtherGameboyRandomNumberListBlock:: ds $11
 NEXTU
 ; second buffer for temporarily saving and restoring current screen's tiles (e.g. if menus are drawn on top)
-wTileMapBackup2:: ds SCREEN_AREA
+wTileMapBackup2:: ds SCREEN_WIDTH * SCREEN_HEIGHT
 ENDU
 
 ; This union spans 30 bytes.
@@ -1536,7 +1536,8 @@ wMonHBackSprite:: dw
 wMonHMoves:: ds NUM_MOVES
 wMonHGrowthRate:: db
 wMonHLearnset:: flag_array NUM_TMS + NUM_HMS
-	ds 1
+	;ds 1
+wMonHPicBank:: db
 wMonHeaderEnd::
 
 ; saved at the start of a battle and then written back at the end of the battle
@@ -1816,24 +1817,24 @@ wObjectDataPointerTemp:: dw
 ; the tile shown outside the boundaries of the map
 wMapBackgroundTile:: db
 
-; number of warps in current map (up to MAX_WARP_EVENTS)
+; number of warps in current map (up to 32)
 wNumberOfWarps:: db
 
 ; current map warp entries
-wWarpEntries:: ds MAX_WARP_EVENTS * 4 ; Y, X, warp ID, map ID
+wWarpEntries:: ds 32 * 4 ; Y, X, warp ID, map ID
 
 ; if $ff, the player's coordinates are not updated when entering the map
 wDestinationWarpID:: db
 
 	ds 128
 
-; number of signs in the current map (up to MAX_BG_EVENTS)
+; number of signs in the current map (up to 16)
 wNumSigns:: db
 
-wSignCoords:: ds MAX_BG_EVENTS * 2 ; Y, X
-wSignTextIDs:: ds MAX_BG_EVENTS
+wSignCoords:: ds 16 * 2 ; Y, X
+wSignTextIDs:: ds 16
 
-; number of sprites on the current map (up to MAX_OBJECT_EVENTS)
+; number of sprites on the current map (up to 16)
 wNumSprites:: db
 
 ; these two variables track the X and Y offset in blocks from the last special warp used
@@ -1841,8 +1842,8 @@ wNumSprites:: db
 wYOffsetSinceLastSpecialWarp:: db
 wXOffsetSinceLastSpecialWarp:: db
 
-wMapSpriteData:: ds MAX_OBJECT_EVENTS * 2 ; movement byte 2, text ID
-wMapSpriteExtraData:: ds MAX_OBJECT_EVENTS * 2 ; trainer class/item ID, trainer set ID
+wMapSpriteData:: ds 16 * 2 ; movement byte 2, text ID
+wMapSpriteExtraData:: ds 16 * 2 ; trainer class/item ID, trainer set ID
 
 ; map height in 2x2 meta-tiles
 wCurrentMapHeight2:: db
@@ -2038,12 +2039,12 @@ UNION
 	ds 128
 NEXTU
 
-wCGBBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; 8 bytes
-wCGBPal:: ds PAL_SIZE ; 8 bytes
+wGBCBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; 8 bytes
+wGBCPal:: ds PALETTE_SIZE ; 8 bytes
 wLastBGP::db
 wLastOBP0::db
 wLastOBP1::db 
-wBGPPalsBuffer:: ds (NUM_ACTIVE_PALS + 1) * PAL_SIZE ; 32 bytes
+wBGPPalsBuffer:: ds (NUM_ACTIVE_PALS + 1) * PALETTE_SIZE ; 32 bytes
 wdef5:: db
 
 ENDU

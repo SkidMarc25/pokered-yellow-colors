@@ -14,7 +14,7 @@ PCMainMenu:
 	ld hl, wMiscFlags
 	set BIT_NO_MENU_BUTTON_SOUND, [hl]
 	call HandleMenuInput
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jp nz, LogOff
 	ld a, [wMaxMenuItem]
 	cp 2

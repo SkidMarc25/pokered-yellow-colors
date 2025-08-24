@@ -149,7 +149,7 @@ Trade_Delay80:
 
 Trade_ClearTileMap:
 	hlcoord 0, 0
-	ld bc, SCREEN_AREA
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, " "
 	jp FillMemory
 
@@ -182,7 +182,7 @@ LoadTradingGFXAndMonNames:
 	ld a, $f0 ; SGB OBP0
 .next
 	ldh [rOBP0], a
-	call UpdateCGBPal_OBP0
+	call UpdateGBCPal_OBP0
 	call EnableLCD
 	xor a
 	ldh [hAutoBGTransferEnabled], a
@@ -200,7 +200,7 @@ LoadTradingGFXAndMonNames:
 Trade_LoadMonPartySpriteGfx:
 	ld a, %11010000
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	farjp LoadMonPartySpriteGfx
 
 Trade_SwapNames:
@@ -305,7 +305,7 @@ Trade_AnimateBallEnteringLinkCable:
 	call DelayFrames
 	ld a, %11100100
 	ldh [rOBP0], a
-	call UpdateCGBPal_OBP0
+	call UpdateGBCPal_OBP0
 	xor a
 	ld [wLinkCableAnimBulgeToggle], a
 	lb bc, $20, $60
@@ -350,9 +350,9 @@ Trade_AnimateBallEnteringLinkCable:
 
 Trade_BallInsideLinkCableOAMBlock:
 	db $7e, 0
-	db $7e, OAM_XFLIP
-	db $7e, OAM_YFLIP
-	db $7e, OAM_XFLIP | OAM_YFLIP
+	db $7e, OAM_HFLIP
+	db $7e, OAM_VFLIP
+	db $7e, OAM_HFLIP | OAM_VFLIP
 
 Trade_ShowEnemyMon:
 	ld a, TRADE_BALL_TILT_ANIM
@@ -387,7 +387,7 @@ Trade_AnimLeftToRight:
 	ld [wTradedMonMovingRight], a
 	ld a, %11100100
 	ldh [rOBP0], a
-	call UpdateCGBPal_OBP0
+	call UpdateGBCPal_OBP0
 	ld a, $54
 	ld [wBaseCoordX], a
 	ld a, $1c
@@ -607,7 +607,7 @@ Trade_AnimCircledMon:
 	ldh a, [rBGP]
 	xor $3c ; make link cable flash
 	ldh [rBGP], a
-	call UpdateCGBPal_BGP
+	call UpdateGBCPal_BGP
 	ld hl, wShadowOAMSprite00TileID
 	ld de, $4
 	ld c, $14
@@ -719,28 +719,28 @@ Trade_CircleOAMBlocks:
 	trade_circle_oam_block .OAMBlock3, 24, 24
 
 .OAMBlock0:
-	db ICON_TRADEBUBBLE << 2 + 0, OAM_PAL1
-	db ICON_TRADEBUBBLE << 2 + 1, OAM_PAL1
-	db ICON_TRADEBUBBLE << 2 + 2, OAM_PAL1
-	db ICON_TRADEBUBBLE << 2 + 3, OAM_PAL1
+	db ICON_TRADEBUBBLE << 2 + 0, OAM_OBP1
+	db ICON_TRADEBUBBLE << 2 + 1, OAM_OBP1
+	db ICON_TRADEBUBBLE << 2 + 2, OAM_OBP1
+	db ICON_TRADEBUBBLE << 2 + 3, OAM_OBP1
 
 .OAMBlock1:
-	db ICON_TRADEBUBBLE << 2 + 1, OAM_PAL1 | OAM_XFLIP
-	db ICON_TRADEBUBBLE << 2 + 0, OAM_PAL1 | OAM_XFLIP
-	db ICON_TRADEBUBBLE << 2 + 3, OAM_PAL1 | OAM_XFLIP
-	db ICON_TRADEBUBBLE << 2 + 2, OAM_PAL1 | OAM_XFLIP
+	db ICON_TRADEBUBBLE << 2 + 1, OAM_OBP1 | OAM_HFLIP
+	db ICON_TRADEBUBBLE << 2 + 0, OAM_OBP1 | OAM_HFLIP
+	db ICON_TRADEBUBBLE << 2 + 3, OAM_OBP1 | OAM_HFLIP
+	db ICON_TRADEBUBBLE << 2 + 2, OAM_OBP1 | OAM_HFLIP
 
 .OAMBlock2:
-	db ICON_TRADEBUBBLE << 2 + 2, OAM_PAL1 | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 3, OAM_PAL1 | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 0, OAM_PAL1 | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 1, OAM_PAL1 | OAM_YFLIP
+	db ICON_TRADEBUBBLE << 2 + 2, OAM_OBP1 | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 3, OAM_OBP1 | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 0, OAM_OBP1 | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 1, OAM_OBP1 | OAM_VFLIP
 
 .OAMBlock3:
-	db ICON_TRADEBUBBLE << 2 + 3, OAM_PAL1 | OAM_XFLIP | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 2, OAM_PAL1 | OAM_XFLIP | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 1, OAM_PAL1 | OAM_XFLIP | OAM_YFLIP
-	db ICON_TRADEBUBBLE << 2 + 0, OAM_PAL1 | OAM_XFLIP | OAM_YFLIP
+	db ICON_TRADEBUBBLE << 2 + 3, OAM_OBP1 | OAM_HFLIP | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 2, OAM_OBP1 | OAM_HFLIP | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 1, OAM_OBP1 | OAM_HFLIP | OAM_VFLIP
+	db ICON_TRADEBUBBLE << 2 + 0, OAM_OBP1 | OAM_HFLIP | OAM_VFLIP
 
 ; a = species
 Trade_LoadMonSprite:

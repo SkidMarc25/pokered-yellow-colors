@@ -28,7 +28,7 @@ RocketHideoutB2FDefaultScript:
 	call StartSimulatingJoypadStates
 	ld a, SFX_ARROW_TILES
 	call PlaySound
-	ld a, PAD_BUTTONS | PAD_CTRL_PAD
+	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 	ld a, SCRIPT_ROCKETHIDEOUTB2F_PLAYER_SPINNING
 	ld [wCurMapScript], a
@@ -83,177 +83,177 @@ RocketHideout2ArrowTilePlayerMovement:
 ;format: direction, count
 ;each list is read starting from the $FF and working backwards
 RocketHideout2ArrowMovement1:
-	db PAD_LEFT, 2
+	db D_LEFT, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement2:
-	db PAD_RIGHT, 4
+	db D_RIGHT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement3:
-	db PAD_UP, 4
-	db PAD_RIGHT, 4
+	db D_UP, 4
+	db D_RIGHT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement4:
-	db PAD_UP, 4
-	db PAD_RIGHT, 4
-	db PAD_UP, 1
+	db D_UP, 4
+	db D_RIGHT, 4
+	db D_UP, 1
 	db -1 ; end
 
 RocketHideout2ArrowMovement5:
-	db PAD_LEFT, 2
-	db PAD_UP, 3
+	db D_LEFT, 2
+	db D_UP, 3
 	db -1 ; end
 
 RocketHideout2ArrowMovement6:
-	db PAD_DOWN, 2
-	db PAD_RIGHT, 4
+	db D_DOWN, 2
+	db D_RIGHT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement7:
-	db PAD_UP, 2
+	db D_UP, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement8:
-	db PAD_UP, 4
+	db D_UP, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement9:
-	db PAD_LEFT, 6
+	db D_LEFT, 6
 	db -1 ; end
 
 RocketHideout2ArrowMovement10:
-	db PAD_UP, 1
+	db D_UP, 1
 	db -1 ; end
 
 RocketHideout2ArrowMovement11:
-	db PAD_LEFT, 6
-	db PAD_UP, 4
+	db D_LEFT, 6
+	db D_UP, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement12:
-	db PAD_DOWN, 2
+	db D_DOWN, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement13:
-	db PAD_LEFT, 8
+	db D_LEFT, 8
 	db -1 ; end
 
 RocketHideout2ArrowMovement14:
-	db PAD_LEFT, 8
-	db PAD_UP, 1
+	db D_LEFT, 8
+	db D_UP, 1
 	db -1 ; end
 
 RocketHideout2ArrowMovement15:
-	db PAD_LEFT, 8
-	db PAD_UP, 6
+	db D_LEFT, 8
+	db D_UP, 6
 	db -1 ; end
 
 RocketHideout2ArrowMovement16:
-	db PAD_UP, 2
-	db PAD_RIGHT, 4
+	db D_UP, 2
+	db D_RIGHT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement17:
-	db PAD_UP, 2
-	db PAD_RIGHT, 4
-	db PAD_UP, 2
+	db D_UP, 2
+	db D_RIGHT, 4
+	db D_UP, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement18:
-	db PAD_DOWN, 2
-	db PAD_RIGHT, 4
-	db PAD_DOWN, 2
+	db D_DOWN, 2
+	db D_RIGHT, 4
+	db D_DOWN, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement19:
-	db PAD_DOWN, 2
-	db PAD_RIGHT, 4
+	db D_DOWN, 2
+	db D_RIGHT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement20:
-	db PAD_LEFT, 10
+	db D_LEFT, 10
 	db -1 ; end
 
 RocketHideout2ArrowMovement21:
-	db PAD_LEFT, 10
-	db PAD_UP, 2
+	db D_LEFT, 10
+	db D_UP, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement22:
-	db PAD_LEFT, 10
-	db PAD_UP, 4
+	db D_LEFT, 10
+	db D_UP, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement23:
-	db PAD_UP, 2
-	db PAD_RIGHT, 2
+	db D_UP, 2
+	db D_RIGHT, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement24:
-	db PAD_RIGHT, 1
-	db PAD_DOWN, 2
+	db D_RIGHT, 1
+	db D_DOWN, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement25:
-	db PAD_RIGHT, 1
+	db D_RIGHT, 1
 	db -1 ; end
 
 RocketHideout2ArrowMovement26:
-	db PAD_DOWN, 2
-	db PAD_RIGHT, 2
+	db D_DOWN, 2
+	db D_RIGHT, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement27:
-	db PAD_DOWN, 2
-	db PAD_LEFT, 2
+	db D_DOWN, 2
+	db D_LEFT, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement28:
-	db PAD_UP, 2
-	db PAD_RIGHT, 4
-	db PAD_UP, 2
-	db PAD_LEFT, 3
+	db D_UP, 2
+	db D_RIGHT, 4
+	db D_UP, 2
+	db D_LEFT, 3
 	db -1 ; end
 
 RocketHideout2ArrowMovement29:
-	db PAD_DOWN, 2
-	db PAD_LEFT, 4
+	db D_DOWN, 2
+	db D_LEFT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement30:
-	db PAD_LEFT, 6
-	db PAD_UP, 4
-	db PAD_LEFT, 5
+	db D_LEFT, 6
+	db D_UP, 4
+	db D_LEFT, 5
 	db -1 ; end
 
 RocketHideout2ArrowMovement31:
-	db PAD_UP, 2
+	db D_UP, 2
 	db -1 ; end
 
 RocketHideout2ArrowMovement32:
-	db PAD_UP, 1
+	db D_UP, 1
 	db -1 ; end
 
 RocketHideout2ArrowMovement33:
-	db PAD_UP, 3
+	db D_UP, 3
 	db -1 ; end
 
 RocketHideout2ArrowMovement34:
-	db PAD_UP, 5
+	db D_UP, 5
 	db -1 ; end
 
 RocketHideout2ArrowMovement35:
-	db PAD_RIGHT, 1
-	db PAD_DOWN, 2
-	db PAD_LEFT, 4
+	db D_RIGHT, 1
+	db D_DOWN, 2
+	db D_LEFT, 4
 	db -1 ; end
 
 RocketHideout2ArrowMovement36:
-	db PAD_LEFT, 10
-	db PAD_UP, 2
-	db PAD_LEFT, 5
+	db D_LEFT, 10
+	db D_UP, 2
+	db D_LEFT, 5
 	db -1 ; end
 
 RocketHideoutB2FPlayerSpinningScript:

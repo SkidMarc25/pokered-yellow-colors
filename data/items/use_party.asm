@@ -1,6 +1,8 @@
 ; items which bring up the party menu when used
 UsableItems_PartyMenu:
 	db MOON_STONE
+	db LINK_STONE
+	db SUN_STONE
 	db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL

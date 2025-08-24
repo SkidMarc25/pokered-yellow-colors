@@ -39,7 +39,7 @@ PlayerPCMenu:
 	inc hl
 	ld a, 3
 	ld [hli], a ; wMaxMenuItem
-	ld a, PAD_A | PAD_B
+	ld a, A_BUTTON | B_BUTTON
 	ld [hli], a ; wMenuWatchedKeys
 	xor a
 	ld [hl], a
@@ -50,7 +50,7 @@ PlayerPCMenu:
 	ld hl, WhatDoYouWantText
 	call PrintText
 	call HandleMenuInput
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jp nz, ExitPlayerPC
 	call PlaceUnfilledArrowMenuCursor
 	ld a, [wCurrentMenuItem]

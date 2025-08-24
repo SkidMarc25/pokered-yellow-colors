@@ -66,13 +66,13 @@ PewterMuseumGuyCoords:
 	dw .right
 
 .down
-	db PAD_UP, PAD_UP, $ff
+	db D_UP, D_UP, $ff
 .up
-	db PAD_RIGHT, PAD_LEFT, $ff
+	db D_RIGHT, D_LEFT, $ff
 .left
-	db PAD_UP, PAD_RIGHT, $ff
+	db D_UP, D_RIGHT, $ff
 .right
-	db PAD_UP, PAD_LEFT, $ff
+	db D_UP, D_LEFT, $ff
 
 ; these are the five coordinates which trigger the gym guy and pointers to
 ; different movements for the player to make to get positioned before the
@@ -91,12 +91,12 @@ PewterGymGuyCoords:
 	dw .five
 
 .one
-	db PAD_LEFT, PAD_DOWN, PAD_DOWN, PAD_RIGHT, $ff
+	db D_LEFT, D_DOWN, D_DOWN, D_RIGHT, $ff
 .two
-	db PAD_LEFT, PAD_DOWN, PAD_RIGHT, PAD_LEFT, $ff
+	db D_LEFT, D_DOWN, D_RIGHT, D_LEFT, $ff
 .three
-	db PAD_LEFT, PAD_LEFT, PAD_LEFT, $00, $00, $00, $00, $00, $00, $00, $00, $ff
+	db D_LEFT, D_LEFT, D_LEFT, $00, $00, $00, $00, $00, $00, $00, $00, $ff
 .four
-	db PAD_LEFT, PAD_LEFT, PAD_UP, PAD_LEFT, $ff
+	db D_LEFT, D_LEFT, D_UP, D_LEFT, $ff
 .five
-	db PAD_LEFT, PAD_DOWN, PAD_LEFT, $00, $00, $00, $00, $00, $00, $00, $00, $ff
+	db D_LEFT, D_DOWN, D_LEFT, $00, $00, $00, $00, $00, $00, $00, $00, $ff

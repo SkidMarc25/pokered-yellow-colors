@@ -255,7 +255,7 @@ MapHSPointers:
 	dw -1 ; end
 
 NoHS:
-	db -1, -1, -1 ; end
+	db $FF, $FF, $FF
 
 MissableObjects:
 ; entries correspond to HS_* constants (see constants/hide_show_constants)
@@ -564,5 +564,5 @@ SeafoamIslandsB4FHS:
 	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_BOULDER1, HIDE
 	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_BOULDER2, HIDE
 	db SEAFOAM_ISLANDS_B4F, SEAFOAMISLANDSB4F_ARTICUNO, SHOW
-	assert_table_length NUM_HS_OBJECTS
-	db -1, 1, SHOW ; end
+	db $FF, $01, SHOW ; end
+	assert_table_length NUM_HS_OBJECTS + 1

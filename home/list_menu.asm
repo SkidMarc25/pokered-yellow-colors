@@ -50,7 +50,7 @@ DisplayListMenuID::
 	ld [wTopMenuItemY], a
 	ld a, 5
 	ld [wTopMenuItemX], a
-	ld a, PAD_A | PAD_B | PAD_SELECT
+	ld a, A_BUTTON | B_BUTTON | SELECT
 	ld [wMenuWatchedKeys], a
 	ld c, 10
 	call DelayFrames
@@ -84,7 +84,7 @@ DisplayListMenuIDLoop::
 	push af
 	call PlaceMenuCursor
 	pop af
-	bit B_PAD_A, a
+	bit BIT_A_BUTTON, a
 	jp z, .checkOtherKeys
 .buttonAPressed
 	ld a, [wCurrentMenuItem]
@@ -170,12 +170,12 @@ DisplayListMenuIDLoop::
 	res BIT_NO_TEXT_DELAY, [hl]
 	jp BankswitchBack
 .checkOtherKeys ; check B, SELECT, Up, and Down keys
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jp nz, ExitListMenu ; if so, exit the menu
-	bit B_PAD_SELECT, a
+	bit BIT_SELECT, a
 	jp nz, HandleItemListSwapping ; if so, allow the player to swap menu entries
 	ld b, a
-	bit B_PAD_DOWN, b
+	bit BIT_D_DOWN, b
 	ld hl, wListScrollOffset
 	jr z, .upPressed
 .downPressed
@@ -222,13 +222,13 @@ DisplayChooseQuantityMenu::
 .waitForKeyPressLoop
 	call JoypadLowSensitivity
 	ldh a, [hJoyPressed] ; newly pressed buttons
-	bit B_PAD_A, a
+	bit BIT_A_BUTTON, a
 	jp nz, .buttonAPressed
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jp nz, .buttonBPressed
-	bit B_PAD_UP, a
+	bit BIT_D_UP, a
 	jr nz, .incrementQuantity
-	bit B_PAD_DOWN, a
+	bit BIT_D_DOWN, a
 	jr nz, .decrementQuantity
 	jr .waitForKeyPressLoop
 .incrementQuantity

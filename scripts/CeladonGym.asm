@@ -40,7 +40,7 @@ CeladonGymErikaPostBattleScript:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, CeladonGymResetScripts
-	ld a, PAD_CTRL_PAD
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 
 CeladonGymReceiveTM21:

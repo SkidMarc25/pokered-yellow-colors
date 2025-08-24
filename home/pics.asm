@@ -17,31 +17,39 @@ UncompressMonSprite::
 ; $74 ≤ index < $99:       bank $C ("Pics 4")
 ; $99 ≤ index:             bank $D ("Pics 5")
 	ld a, [wCurPartySpecies]
-	ld b, a
-	cp MEW
-	ld a, BANK(MewPicFront)
-	jr z, .GotBank
-	ld a, b
+	;ld b, a
+	;cp MEW
+	;ld a, BANK(MewPicFront)
+	;jr z, .GotBank
+	;ld a, b
 	cp FOSSIL_KABUTOPS
+	jr z, .RecallBank
+	cp FOSSIL_AERODACTYL
+	jr z, .RecallBank
+	cp MON_GHOST
+	jr z, .RecallBank
+	ld a, [wMonHPicBank]
+	jr .GotBank
+.RecallBank
 	ld a, BANK(FossilKabutopsPic)
-	jr z, .GotBank
-	ld a, b
-	cp TANGELA + 1
-	ld a, BANK("Pics 1")
-	jr c, .GotBank
-	ld a, b
-	cp MOLTRES + 1
-	ld a, BANK("Pics 2")
-	jr c, .GotBank
-	ld a, b
-	cp BEEDRILL + 2
-	ld a, BANK("Pics 3")
-	jr c, .GotBank
-	ld a, b
-	cp STARMIE + 1
-	ld a, BANK("Pics 4")
-	jr c, .GotBank
-	ld a, BANK("Pics 5")
+	;pjr z, .GotBank
+	;ld a, b
+	;cp TANGELA + 1
+	;ld a, BANK("Pics 1")
+	;jr c, .GotBank
+	;ld a, b
+	;cp MOLTRES + 1
+	;ld a, BANK("Pics 2")
+	;jr c, .GotBank
+	;ld a, b
+	;cp BEEDRILL + 2
+	;ld a, BANK("Pics 3")
+	;jr c, .GotBank
+	;ld a, b
+	;cp STARMIE + 1
+	;ld a, BANK("Pics 4")
+	;jr c, .GotBank
+	;ld a, BANK("Pics 5")
 .GotBank
 	jp UncompressSpriteData
 
@@ -93,7 +101,7 @@ LoadUncompressedSpriteData::
 	add a     ; 8*(7*((8-w)/2) + 7-h) ; combined overall offset (in bytes)
 	ldh [hSpriteOffset], a
 	xor a
-	ld [rRAMB], a
+	ld [MBC1SRamBank], a
 	ld hl, sSpriteBuffer0
 	call ZeroSpriteBuffer   ; zero buffer 0
 	ld de, sSpriteBuffer1
@@ -151,7 +159,7 @@ ZeroSpriteBuffer::
 ; de: output address
 InterlaceMergeSpriteBuffers::
 	xor a
-	ld [rRAMB], a
+	ld [MBC1SRamBank], a
 	push de
 	ld hl, sSpriteBuffer2 + (SPRITEBUFFERSIZE - 1) ; destination: end of buffer 2
 	ld de, sSpriteBuffer1 + (SPRITEBUFFERSIZE - 1) ; source 2: end of buffer 1

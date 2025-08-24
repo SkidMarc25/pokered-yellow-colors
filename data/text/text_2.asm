@@ -910,14 +910,11 @@ _LinkBattleLostText::
 
 _TrainerAboutToUseText::
 	text_ram wTrainerName
-	text " is"
-	line "about to use"
-	cont "@"
-	text_ram wEnemyMonNick
-	text "!"
+	text "is sending out"
+	line "another #MON!"
 
-	para "Will <PLAYER>"
-	line "change #MON?"
+	para "Will you swap"
+	line "#MON too?"
 	done
 
 _TrainerSentOutText::

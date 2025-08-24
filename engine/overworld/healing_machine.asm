@@ -12,7 +12,7 @@ AnimateHealingMachine:
 	push af
 	ld a, $e0
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	ld hl, wShadowOAMSprite33
 	ld de, PokeCenterOAMData
 	call CopyHealingMachineOAM
@@ -58,7 +58,7 @@ AnimateHealingMachine:
 	call DelayFrames
 	pop af
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	pop hl
 	pop af
 	ld [hl], a
@@ -68,15 +68,13 @@ PokeCenterFlashingMonitorAndHealBall:
 	INCBIN "gfx/overworld/heal_machine.2bpp"
 
 PokeCenterOAMData:
-	; heal machine monitor
-	dbsprite  6,  4,  4,  4, $7c, OAM_PAL1 | OAM_HIGH_PALS
-	; poke balls 1-6
-	dbsprite  6,  5,  0,  3, $7d, OAM_PAL1 | OAM_HIGH_PALS
-	dbsprite  7,  5,  0,  3, $7d, OAM_PAL1 | OAM_HIGH_PALS | OAM_XFLIP
-	dbsprite  6,  6,  0,  0, $7d, OAM_PAL1 | OAM_HIGH_PALS
-	dbsprite  7,  6,  0,  0, $7d, OAM_PAL1 | OAM_HIGH_PALS | OAM_XFLIP
-	dbsprite  6,  6,  0,  5, $7d, OAM_PAL1 | OAM_HIGH_PALS
-	dbsprite  7,  6,  0,  5, $7d, OAM_PAL1 | OAM_HIGH_PALS | OAM_XFLIP
+	db $24,$34,$7C,$14 ; heal machine monitor
+	db $2B,$30,$7D,$14 ; pokeballs 1-6
+	db $2B,$38,$7D,$34
+	db $30,$30,$7D,$14
+	db $30,$38,$7D,$34
+	db $35,$30,$7D,$14
+	db $35,$38,$7D,$34
 	
 ; d = value to xor with palette
 FlashSprite8Times:
@@ -85,7 +83,7 @@ FlashSprite8Times:
 	ldh a, [rOBP1]
 	xor d
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	ld c, 10
 	call DelayFrames
 	dec b

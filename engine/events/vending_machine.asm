@@ -7,7 +7,7 @@ VendingMachineMenu::
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
-	ld a, PAD_A | PAD_B
+	ld a, A_BUTTON | B_BUTTON
 	ld [wMenuWatchedKeys], a
 	ld a, 3
 	ld [wMaxMenuItem], a
@@ -31,7 +31,7 @@ VendingMachineMenu::
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
 	call HandleMenuInput
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jr nz, .notThirsty
 	ld a, [wCurrentMenuItem]
 	cp 3 ; chose Cancel?

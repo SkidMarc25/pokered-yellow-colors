@@ -17,11 +17,11 @@ Delay3::
 	ld c, 3
 	jp DelayFrames
 
-UpdateCGBPal_BGP::
+UpdateGBCPal_BGP::
 	push af
-	ld a, [hCGB]
+	ld a, [hGBC]
 	and a
-	jr z, .notCGB
+	jr z, .notGBC
 	push bc
 	push de
 	push hl
@@ -30,20 +30,20 @@ UpdateCGBPal_BGP::
 	ld a, [wLastBGP]
 	cp b
 	jr z, .noChangeInBGP
-	farcall _UpdateCGBPal_BGP
+	farcall _UpdateGBCPal_BGP
 .noChangeInBGP
 	pop hl
 	pop de
 	pop bc
-.notCGB
+.notGBC
 	pop af
 	ret
 	
-UpdateCGBPal_OBP0::
+UpdateGBCPal_OBP0::
 	push af
-	ld a, [hCGB]
+	ld a, [hGBC]
 	and a
-	jr z, .notCGB
+	jr z, .notGBC
 	push bc
 	push de
 	push hl
@@ -53,20 +53,20 @@ UpdateCGBPal_OBP0::
 	cp b
 	jr z, .noChangeInOBP0
 	ld d, CONVERT_OBP0
-	farcall _UpdateCGBPal_OBP
+	farcall _UpdateGBCPal_OBP
 .noChangeInOBP0
 	pop hl
 	pop de
 	pop bc
-.notCGB
+.notGBC
 	pop af
 	ret
 	
-UpdateCGBPal_OBP1::
+UpdateGBCPal_OBP1::
 	push af
-	ld a, [hCGB]
+	ld a, [hGBC]
 	and a
-	jr z, .notCGB
+	jr z, .notGBC
 	push bc
 	push de
 	push hl
@@ -76,12 +76,12 @@ UpdateCGBPal_OBP1::
 	cp b
 	jr z, .noChangeInOBP1
 	ld d, CONVERT_OBP1
-	farcall _UpdateCGBPal_OBP
+	farcall _UpdateGBCPal_OBP
 .noChangeInOBP1
 	pop hl
 	pop de
 	pop bc
-.notCGB
+.notGBC
 	pop af
 	ret
 
@@ -91,9 +91,9 @@ GBPalNormal::
 	ldh [rBGP], a
 	ld a, %11010000 ; 3100
 	ldh [rOBP0], a
-	call UpdateCGBPal_BGP
-	call UpdateCGBPal_OBP0
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_BGP
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 	ret
 
 GBPalWhiteOut::
@@ -102,9 +102,9 @@ GBPalWhiteOut::
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
-	call UpdateCGBPal_BGP
-	call UpdateCGBPal_OBP0
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_BGP
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 	ret
 
 RunDefaultPaletteCommand::

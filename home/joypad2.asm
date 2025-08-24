@@ -40,7 +40,7 @@ JoypadLowSensitivity::
 .delayOver
 ; if [hJoy6] = 0 and A or B is pressed, report no buttons as pressed
 	ldh a, [hJoyHeld]
-	and PAD_A | PAD_B
+	and A_BUTTON | B_BUTTON
 	jr z, .setShortDelay
 	ldh a, [hJoy6] ; flag
 	and a
@@ -74,7 +74,7 @@ WaitForTextScrollButtonPress::
 	call JoypadLowSensitivity
 	predef CableClub_Run
 	ldh a, [hJoy5]
-	and PAD_A | PAD_B
+	and A_BUTTON | B_BUTTON
 	jr z, .loop
 	pop af
 	ldh [hDownArrowBlinkCount2], a

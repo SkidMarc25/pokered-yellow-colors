@@ -12,7 +12,7 @@ AnimateHallOfFame:
 	call FillMemory
 	call EnableLCD
 	ld hl, rLCDC
-	set B_LCDC_BG_MAP, [hl]
+	set rLCDC_BG_TILEMAP, [hl]
 	xor a
 	ld hl, wHallOfFame
 	ld bc, HOF_TEAM
@@ -88,7 +88,7 @@ AnimateHallOfFame:
 	xor a
 	ldh [hWY], a
 	ld hl, rLCDC
-	res B_LCDC_BG_MAP, [hl]
+	res rLCDC_BG_TILEMAP, [hl]
 	ret
 
 HallOfFameText:
@@ -122,7 +122,7 @@ HoFShowMonOrPlayer:
 	call RunPaletteCommand
 	ld a, %11100100
 	ldh [rBGP], a
-	call UpdateCGBPal_BGP
+	call UpdateGBCPal_BGP
 	ld c, $31 ; back pic
 	call HoFLoadMonPlayerPicTileIDs
 	ld d, $a0

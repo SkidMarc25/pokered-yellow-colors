@@ -145,7 +145,7 @@ Evolution_CheckForCancel:
 	call JoypadLowSensitivity
 	ldh a, [hJoy5]
 	pop bc
-	and PAD_B
+	and B_BUTTON
 	jr nz, .pressedB
 .notAllowedToCancel
 	dec c

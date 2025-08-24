@@ -45,7 +45,7 @@ ViridianGymDefaultScript:
 	set BIT_SPINNING, [hl]
 	ld a, SFX_ARROW_TILES
 	call PlaySound
-	ld a, PAD_BUTTONS | PAD_CTRL_PAD
+	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 	ld a, SCRIPT_VIRIDIANGYM_PLAYER_SPINNING
 	ld [wCurMapScript], a
@@ -67,51 +67,51 @@ ViridianGymArrowTilePlayerMovement:
 	db -1 ; end
 
 ViridianGymArrowMovement1:
-	db PAD_UP, 9
+	db D_UP, 9
 	db -1 ; end
 
 ViridianGymArrowMovement2:
-	db PAD_LEFT, 8
+	db D_LEFT, 8
 	db -1 ; end
 
 ViridianGymArrowMovement3:
-	db PAD_DOWN, 9
+	db D_DOWN, 9
 	db -1 ; end
 
 ViridianGymArrowMovement4:
-	db PAD_RIGHT, 6
+	db D_RIGHT, 6
 	db -1 ; end
 
 ViridianGymArrowMovement5:
-	db PAD_DOWN, 2
+	db D_DOWN, 2
 	db -1 ; end
 
 ViridianGymArrowMovement6:
-	db PAD_DOWN, 7
+	db D_DOWN, 7
 	db -1 ; end
 
 ViridianGymArrowMovement7:
-	db PAD_RIGHT, 8
+	db D_RIGHT, 8
 	db -1 ; end
 
 ViridianGymArrowMovement8:
-	db PAD_RIGHT, 9
+	db D_RIGHT, 9
 	db -1 ; end
 
 ViridianGymArrowMovement9:
-	db PAD_UP, 8
+	db D_UP, 8
 	db -1 ; end
 
 ViridianGymArrowMovement10:
-	db PAD_UP, 6
+	db D_UP, 6
 	db -1 ; end
 
 ViridianGymArrowMovement11:
-	db PAD_LEFT, 6
+	db D_LEFT, 6
 	db -1 ; end
 
 ViridianGymArrowMovement12:
-	db PAD_LEFT, 12
+	db D_LEFT, 12
 	db -1 ; end
 
 ViridianGymPlayerSpinningScript:
@@ -132,7 +132,7 @@ ViridianGymGiovanniPostBattle:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, ViridianGymResetScripts
-	ld a, PAD_CTRL_PAD
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
 	ld [wJoyIgnore], a
 ; fallthrough
 ViridianGymReceiveTM27:

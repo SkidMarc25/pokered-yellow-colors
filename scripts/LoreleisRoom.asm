@@ -46,7 +46,7 @@ LoreleisRoomNoopScript:
 LoreleiScriptWalkIntoRoom:
 ; Walk six steps upward.
 	ld hl, wSimulatedJoypadStatesEnd
-	ld a, PAD_UP
+	ld a, D_UP
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
@@ -79,7 +79,7 @@ LoreleisRoomDefaultScript:
 	ld a, TEXT_LORELEISROOM_DONT_RUN_AWAY
 	ldh [hTextID], a
 	call DisplayTextID  ; "Don't run away!"
-	ld a, PAD_UP
+	ld a, D_UP
 	ld [wSimulatedJoypadStatesEnd], a
 	ld a, $1
 	ld [wSimulatedJoypadStatesIndex], a

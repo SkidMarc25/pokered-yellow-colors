@@ -32,12 +32,12 @@ RunNPCMovementScript::
 	push af
 	ld a, [wNPCMovementScriptBank]
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	ld [MBC1RomBank], a
 	ld a, [wNPCMovementScriptFunctionNum]
 	call CallFunctionInTable
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	ld [MBC1RomBank], a
 	ret
 
 .NPCMovementScriptPointerTables
@@ -58,9 +58,9 @@ IF DEF(_DEBUG)
 	bit BIT_DEBUG_MODE, a
 	ret z
 	ldh a, [hJoyHeld]
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	ret nz
 	ldh a, [hJoyPressed]
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 ENDC
 	ret

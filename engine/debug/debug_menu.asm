@@ -31,7 +31,7 @@ IF DEF(_DEBUG)
 	ld a, TEXT_DELAY_MEDIUM
 	ld [wOptions], a
 
-	ld a, PAD_A | PAD_B | PAD_START
+	ld a, A_BUTTON | B_BUTTON | START
 	ld [wMenuWatchedKeys], a
 	xor a
 	ld [wMenuJoypadPollCount], a
@@ -47,7 +47,7 @@ IF DEF(_DEBUG)
 	ld [wMenuWatchMovingOutOfBounds], a
 
 	call HandleMenuInput
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jp nz, DisplayTitleScreen
 
 	ld a, [wCurrentMenuItem]

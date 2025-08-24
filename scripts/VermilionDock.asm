@@ -14,7 +14,7 @@ VermilionDock_Script:
 	ld hl, wStatusFlags5
 	set BIT_SCRIPTED_MOVEMENT_STATE, [hl]
 	ld hl, wSimulatedJoypadStatesEnd
-	ld a, PAD_UP
+	ld a, D_UP
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
@@ -38,7 +38,7 @@ VermilionDock_Script:
 
 VermilionDockSSAnneLeavesScript:
 	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
-	callfar CGBSetCPU1xSpeed
+	callfar GBCSetCPU1xSpeed
 	call GBPalNormal
 	ld a, SFX_STOP_ALL_MUSIC
 	ld [wJoyIgnore], a
@@ -65,7 +65,7 @@ VermilionDockSSAnneLeavesScript:
 	ldh [hAutoBGTransferEnabled], a
 	ld [wSSAnneSmokeDriftAmount], a
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	ld a, 88
 	ld [wSSAnneSmokeX], a
 	ld hl, wMapViewVRAMPointer
@@ -120,7 +120,7 @@ VermilionDockSSAnneLeavesScript:
 	dec hl
 	ld [hl], c
 	call LoadPlayerSpriteGraphics
-	callfar CGBSetCPU2xSpeed
+	callfar GBCSetCPU2xSpeed
 	ld hl, wNumberOfWarps
 	dec [hl]
 	ret
@@ -160,10 +160,10 @@ VermilionDock_EmitSmokePuff:
 
 VermilionDockOAMBlock:
 ; tile ID, attributes
-	db $fc, OAM_PAL1
-	db $fd, OAM_PAL1
-	db $fe, OAM_PAL1
-	db $ff, OAM_PAL1
+	db $fc, $10
+	db $fd, $10
+	db $fe, $10
+	db $ff, $10
 
 VermilionDock_SyncScrollWithLY:
 	ld h, d

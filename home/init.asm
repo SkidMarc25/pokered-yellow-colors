@@ -16,7 +16,7 @@ Init::
 ; * 8x8 OBJ size
 ; * OBJ display enabled
 ; * BG display enabled
-DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC_BG_9800 | LCDC_OBJ_8 | LCDC_OBJ_ON | LCDC_BG_ON
+DEF rLCDC_DEFAULT EQU (1 << rLCDC_ENABLE) | (1 << rLCDC_WINDOW_TILEMAP) | (1 << rLCDC_WINDOW_ENABLE) | (1 << rLCDC_SPRITES_ENABLE) | (1 << rLCDC_BG_PRIORITY)
 
 	di
 
@@ -35,7 +35,7 @@ DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC
 	ldh [rOBP0], a
 	ldh [rOBP1], a
 
-	ld a, LCDC_ON
+	ld a, 1 << rLCDC_ENABLE
 	ldh [rLCDC], a
 	call DisableLCD
 
@@ -61,7 +61,7 @@ DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC
 
 	ld a, BANK(WriteDMACodeToHRAM)
 	ldh [hLoadedROMBank], a
-	ld [rROMB], a
+	ld [MBC1RomBank], a
 	call WriteDMACodeToHRAM
 
 	xor a
@@ -70,7 +70,7 @@ DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC
 	ldh [hSCX], a
 	ldh [hSCY], a
 	ldh [rIF], a
-	ld a, IE_VBLANK | IE_TIMER | IE_SERIAL
+	ld a, 1 << VBLANK + 1 << TIMER + 1 << SERIAL
 	ldh [rIE], a
 
 	ld a, 144 ; move the window off-screen
@@ -87,7 +87,7 @@ DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC
 	ld h, HIGH(vBGMap1)
 	call ClearBgMap
 
-	ld a, LCDC_DEFAULT
+	ld a, rLCDC_DEFAULT
 	ldh [rLCDC], a
 	ld a, 16
 	ldh [hSoftReset], a
@@ -113,7 +113,7 @@ DEF LCDC_DEFAULT EQU LCDC_ON | LCDC_WIN_9C00 | LCDC_WIN_ON | LCDC_BLOCK21 | LCDC
 	call ClearVram
 	call GBPalNormal
 	call ClearSprites
-	ld a, LCDC_DEFAULT
+	ld a, rLCDC_DEFAULT
 	ldh [rLCDC], a
 
 	jp PrepareTitleScreen

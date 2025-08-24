@@ -13,7 +13,7 @@ CeladonPrizeMenu::
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
-	ld a, PAD_A | PAD_B
+	ld a, A_BUTTON | B_BUTTON
 	ld [wMenuWatchedKeys], a
 	ld a, $03
 	ld [wMaxMenuItem], a
@@ -31,7 +31,7 @@ CeladonPrizeMenu::
 	ld hl, WhichPrizeTextPtr
 	call PrintText
 	call HandleMenuInput ; menu choice handler
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jr nz, .noChoice
 	ld a, [wCurrentMenuItem]
 	cp 3 ; "NO,THANKS" choice

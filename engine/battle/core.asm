@@ -18,7 +18,7 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	call LoadFontTilePatterns
 	call LoadHudAndHpBarAndStatusTilePatterns
 	ld hl, vBGMap0
-	ld bc, TILEMAP_AREA
+	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 .clearBackgroundLoop
 	ld a, " "
 	ld [hli], a
@@ -73,8 +73,8 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP0
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
 	ld h, b
 	ld l, $40
@@ -87,7 +87,7 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	push af
 	ld a, b
 	cp $72
-	call z, UpdateCGBPal_BGP
+	call z, UpdateGBCPal_BGP
 	pop af
 	call SlidePlayerHeadLeft
 	ld a, c
@@ -913,8 +913,8 @@ ReplaceFaintedEnemyMon:
 	ldpal a, SHADE_BLACK, SHADE_DARK, SHADE_LIGHT, SHADE_WHITE
 	ld [rOBP0], a
 	ld [rOBP1], a
-	call UpdateCGBPal_OBP0
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 	callfar DrawEnemyPokeballs
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
@@ -944,8 +944,20 @@ TrainerBattleVictory:
 .gymleader
 	ld a, [wTrainerClass]
 	cp RIVAL3 ; final battle against rival
+	;jr nz, .notrival
+	jr z, .special1998
+	cp LORELEI
+	jr z, .special1998
+	cp BRUNO
+	jr z, .special1998
+	cp AGATHA
+	jr z, .special1998
+	cp LANCE
 	jr nz, .notrival
+.special1998
 	ld b, MUSIC_DEFEATED_GYM_LEADER
+	cp RIVAL3 ; final battle against rival
+	jr nz, .notrival
 	ld hl, wStatusFlags7
 	set BIT_NO_MAP_MUSIC, [hl]
 .notrival
@@ -1900,6 +1912,23 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl
+	ld a, [wEnemyMonSpecies2]
+	ld [wPokedexNum], a
+	callfar IndexToPokedex
+	ld a, [wPokedexNum]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	hlcoord 1, 1
+	ld [hl], $72 ; replace this with your Poké Ball icon or other character
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -2108,9 +2137,9 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
-	ld [hl], PAD_RIGHT | PAD_A ; wMenuWatchedKeys
+	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
 	call HandleMenuInput
-	bit B_PAD_RIGHT, a
+	bit BIT_D_RIGHT, a
 	jr nz, .rightColumn
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
@@ -2141,10 +2170,10 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
-	ld a, PAD_LEFT | PAD_A
+	ld a, D_LEFT | A_BUTTON
 	ld [hli], a ; wMenuWatchedKeys
 	call HandleMenuInput
-	bit B_PAD_LEFT, a
+	bit BIT_D_LEFT, a
 	jr nz, .leftColumn ; if left was pressed, jump
 	ld a, [wCurrentMenuItem]
 	add $2 ; if we're in the right column, the actual id is +2
@@ -2368,12 +2397,12 @@ PartyMenuOrRockOrRun:
 	inc hl
 	ld a, $2
 	ld [hli], a ; wMaxMenuItem
-	ld a, PAD_B | PAD_A
+	ld a, B_BUTTON | A_BUTTON
 	ld [hli], a ; wMenuWatchedKeys
 	xor a
 	ld [hl], a ; wLastMenuItem
 	call HandleMenuInput
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	jr nz, .partyMonDeselected ; if B was pressed, jump
 ; A was pressed
 	call PlaceUnfilledArrowMenuCursor
@@ -2572,10 +2601,10 @@ MoveSelectionMenu:
 	ld [hli], a ; wMaxMenuItem
 	ld a, [wMoveMenuType]
 	dec a
-	ld b, PAD_UP | PAD_DOWN | PAD_A
+	ld b, D_UP | D_DOWN | A_BUTTON
 	jr z, .matchedkeyspicked
 	dec a
-	ld b, PAD_UP | PAD_DOWN | PAD_A | PAD_B
+	ld b, D_UP | D_DOWN | A_BUTTON | B_BUTTON
 	jr z, .matchedkeyspicked
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
@@ -2583,9 +2612,9 @@ MoveSelectionMenu:
 	; Disable left, right, and START buttons in regular battles.
 	ld a, [wStatusFlags7]
 	bit BIT_TEST_BATTLE, a
-	ld b, ~(PAD_LEFT | PAD_RIGHT | PAD_START)
+	ld b, D_UP | D_DOWN | A_BUTTON | B_BUTTON | SELECT
 	jr z, .matchedkeyspicked
-	ld b, PAD_CTRL_PAD | PAD_BUTTONS
+	ld b, D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON | SELECT | START
 .matchedkeyspicked
 	ld a, b
 	ld [hli], a ; wMenuWatchedKeys
@@ -2631,13 +2660,13 @@ SelectMenuItem:
 	call HandleMenuInput
 	ld hl, hUILayoutFlags
 	res BIT_DOUBLE_SPACED_MENU, [hl]
-	bit B_PAD_UP, a
+	bit BIT_D_UP, a
 	jp nz, SelectMenuItem_CursorUp
-	bit B_PAD_DOWN, a
+	bit BIT_D_DOWN, a
 	jp nz, SelectMenuItem_CursorDown
-	bit B_PAD_SELECT, a
+	bit BIT_SELECT, a
 	jp nz, SwapMovesInMenu
-	bit B_PAD_B, a
+	bit BIT_B_BUTTON, a
 	push af
 	xor a
 	ld [wMenuItemToSwap], a
@@ -4190,7 +4219,29 @@ GetDamageVarsForPlayerAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wPlayerMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	;jr nc, .specialAttack
+        ld a, [wPlayerMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
+        ; fallthrough
 .physicalAttack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4303,7 +4354,29 @@ GetDamageVarsForEnemyAttack:
 	ret z ; return if move power is zero
 	ld a, [hl] ; a = [wEnemyMoveType]
 	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	;jr nc, .specialAttack
+        ld a, [wEnemyMoveNum]
+        ld b, a
+        jr nc, .isSpecialActuallyPhysical
+        jr .isPhysicalActuallySpecial
+.isSpecialActuallyPhysical
+        ld hl, SpecialToPhysicalMoves
+.specialPhysicalLoop
+        ld a, [hli]
+        cp b
+        jr z, .physicalAttack
+        cp $ff ; end of list
+        jr nz, .specialPhysicalLoop ; keep checking list
+        jr .specialAttack ; Not actually a physical move
+.isPhysicalActuallySpecial
+        ld hl, PhysicalToSpecialMoves
+.physicalSpecialLoop
+        ld a, [hli]
+        cp b
+        jr z, .specialAttack ; the physical move is actually special
+        cp $ff ; end of list
+        jr nz, .physicalSpecialLoop ; keep checking list
+        ; fallthrough
 .physicalAttack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -4403,6 +4476,8 @@ GetDamageVarsForEnemyAttack:
 	and a
 	and a
 	ret
+
+INCLUDE "data/battle/physical_special_split.asm"
 
 ; get stat c of enemy mon
 ; c: stat to get (STAT_* constant)
@@ -6397,9 +6472,9 @@ LoadPlayerBackPic:
 	ld de, vBackPic
 	call InterlaceMergeSpriteBuffers
 	ld a, $a
-	ld [rRAMG], a
+	ld [MBC1SRamEnable], a
 	xor a
-	ld [rRAMB], a
+	ld [MBC1SRamBank], a
 	ld hl, vSprites
 	ld de, sSpriteBuffer1
 	ldh a, [hLoadedROMBank]
@@ -6407,7 +6482,7 @@ LoadPlayerBackPic:
 	ld c, 7 * 7
 	call CopyVideoData
 	xor a
-	ld [rRAMG], a
+	ld [MBC1SRamEnable], a
 	ld a, $31
 	ldh [hStartTileID], a
 	hlcoord 1, 5
@@ -6808,7 +6883,7 @@ DetermineWildOpponent:
 	bit BIT_DEBUG_MODE, a
 	jr z, .notDebugMode
 	ldh a, [hJoyHeld]
-	bit B_PAD_B, a ; disable wild encounters
+	bit BIT_B_BUTTON, a ; disable wild encounters
 	ret nz
 .notDebugMode
 	ld a, [wNumberOfNoRandomBattleStepsLeft]
@@ -6817,7 +6892,7 @@ DetermineWildOpponent:
 	callfar TryDoWildEncounter
 	ret nz
 InitBattleCommon:
-	callfar CGBSetCPU1xSpeed
+	callfar GBCSetCPU1xSpeed
 	ld a, [wMapPalOffset]
 	push af
 	ld hl, wLetterPrintingDelayFlags
