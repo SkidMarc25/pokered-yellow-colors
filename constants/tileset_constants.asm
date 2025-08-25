@@ -25,10 +25,4 @@
 	const CLUB         ; 21
 	const FACILITY     ; 22
 	const PLATEAU      ; 23
-	const CITY         ; 24
-	const PORT         ; 25
-	const BURNED       ; 26
-	const PEWTER       ; 27
-	const SEWER        ; 28
-	const ZOO          ; 29
 DEF NUM_TILESETS EQU const_value

@@ -40,7 +40,7 @@ PrepareOakSpeech:
 	jp CopyData
 
 OakSpeech:
-	callfar GBCSetCPU1xSpeed
+	callfar CGBSetCPU1xSpeed
 	ld a, SFX_STOP_ALL_MUSIC
 	call PlaySound
 	ld a, BANK(Music_Routes2)
@@ -82,7 +82,7 @@ OakSpeech:
 	call LoadFlippedFrontSpriteByMonIndex	
 	ld a, %11100100
 	ld [rBGP], a
-	call UpdateGBCPal_BGP	
+	call UpdateCGBPal_BGP	
 	push af
 	push bc
 	push hl
@@ -134,7 +134,7 @@ OakSpeech:
 	call PlaySound
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
+	ld [rROMB], a
 	ld c, 4
 	call DelayFrames
 	ld de, RedSprite
@@ -162,7 +162,7 @@ OakSpeech:
 	call PlaySound
 	pop af
 	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
+	ld [rROMB], a
 	ld c, 20
 	call DelayFrames
 	hlcoord 6, 5
@@ -201,7 +201,7 @@ FadeInIntroPic:
 .next
 	ld a, [hli]
 	ldh [rBGP], a
-	call UpdateGBCPal_BGP
+	call UpdateCGBPal_BGP
 	ld c, 10
 	call DelayFrames
 	dec b
@@ -219,7 +219,7 @@ IntroFadePalettes:
 MovePicLeft:
 	ld a, %11100100
 	ldh [rBGP], a
-	call UpdateGBCPal_BGP
+	call UpdateCGBPal_BGP
 MovePicLeft_NoPalUpdate:
 	ld a, 119
 	ldh [rWX], a

@@ -21,7 +21,7 @@ HallOfFameNoopScript:
 	ret
 
 HallOfFameResetEventsAndSaveScript:
-	callfar GBCSetCPU1xSpeed
+	callfar CGBSetCPU1xSpeed
 	call Delay3
 	ld a, [wLetterPrintingDelayFlags]
 	push af
@@ -59,7 +59,7 @@ HallOfFameResetEventsAndSaveScript:
 	jp Init
 
 HallOfFameDefaultScript:
-	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld hl, wSimulatedJoypadStatesEnd
 	ld de, HallOfFameEntryMovement
@@ -72,7 +72,7 @@ HallOfFameDefaultScript:
 	ret
 
 HallOfFameEntryMovement:
-	db D_UP, 5
+	db PAD_UP, 5
 	db -1 ; end
 
 HallOfFameOakCongratulationsScript:
@@ -95,7 +95,7 @@ HallOfFameOakCongratulationsScript:
 	ld a, TEXT_HALLOFFAME_OAK
 	ldh [hTextID], a
 	call DisplayTextID
-	ld a, A_BUTTON | B_BUTTON | SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, HS_CERULEAN_CAVE_GUY
 	ld [wMissableObjectIndex], a

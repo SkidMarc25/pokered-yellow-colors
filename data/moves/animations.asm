@@ -415,7 +415,6 @@ BodySlamAnim:
 WrapAnim:
 	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
 	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
-	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
 	db -1 ; end
 
 TakeDownAnim:
@@ -472,11 +471,10 @@ BiteAnim:
 	db -1 ; end
 
 GrowlAnim:
-	battle_anim GROWL, SUBANIM_0_HEART_1_MUSIC, 1, 6
+	battle_anim GROWL, SUBANIM_1_SHOUT, 1, 6
 	db -1 ; end
 
 RoarAnim:
-	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	db -1 ; end
@@ -492,7 +490,6 @@ SupersonicAnim:
 	db -1 ; end
 
 SonicBoomAnim:
-	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim ROAR, SUBANIM_1_SHOUT, 1, 6
 	battle_anim GUST, SUBANIM_1_TORNADO, 1, 6
 	battle_anim NO_MOVE, SUBANIM_1_STAR_BIG, 1, 6
@@ -537,7 +534,7 @@ HydroPumpAnim:
 
 SurfAnim:
 	battle_anim SURF, SE_WATER_DROPLETS_EVERYWHERE
-	battle_anim HYDRO_PUMP, SUBANIM_0_WATER_COLUMNS, 0, 6
+	battle_anim HYDRO_PUMP, SUBANIM_0_WATER_COLUMNS, 0, 4
 	db -1 ; end
 
 IceBeamAnim:
@@ -835,12 +832,10 @@ MinimizeAnim:
 
 SmokeScreenAnim:
 	battle_anim SMOKESCREEN, SUBANIM_1_SAND, 1, 6
-	battle_anim NO_MOVE, SUBANIM_0_BALL_POOF_ENEMY, 0, 4
 	battle_anim NO_MOVE, SE_DARKEN_MON_PALETTE
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DARK_SCREEN_PALETTE
-	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
 	battle_anim NO_MOVE, SE_DELAY_ANIMATION_10
@@ -975,7 +970,6 @@ SpikeCannonAnim:
 
 ConstrictAnim:
 	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
-	battle_anim CONSTRICT, SUBANIM_0_BIND, 0, 6
 	db -1 ; end
 
 AmnesiaAnim:
@@ -1024,7 +1018,6 @@ BarrageAnim:
 	db -1 ; end
 
 LeechLifeAnim:
-	battle_anim LEECH_LIFE, SUBANIM_0_STAR_THRICE, 0, 8
 	battle_anim NO_MOVE, SE_DARK_SCREEN_FLASH
 	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 0, 6
 	battle_anim NO_MOVE, SUBANIM_0_CIRCLE_1_SQUARE_TOSS_BACK, 0, 6

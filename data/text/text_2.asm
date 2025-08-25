@@ -913,7 +913,7 @@ _TrainerAboutToUseText::
 	text "is sending out"
 	line "another #MON!"
 
-	para "Will you swap"
+	para "Switch out your"
 	line "#MON too?"
 	done
 

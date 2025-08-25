@@ -9,8 +9,4 @@ WaterTilesets:
 	db CAVERN
 	db FACILITY
 	db PLATEAU
-	db CITY
-	db PORT
-	db SEWER
-	db ZOO
 	db -1 ; end

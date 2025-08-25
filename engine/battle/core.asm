@@ -18,7 +18,7 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	call LoadFontTilePatterns
 	call LoadHudAndHpBarAndStatusTilePatterns
 	ld hl, vBGMap0
-	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
+	ld bc, TILEMAP_AREA
 .clearBackgroundLoop
 	ld a, " "
 	ld [hli], a
@@ -73,8 +73,8 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
-	call UpdateGBCPal_OBP0
-	call UpdateGBCPal_OBP1
+	call UpdateCGBPal_OBP0
+	call UpdateCGBPal_OBP1
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
 	ld h, b
 	ld l, $40
@@ -87,7 +87,7 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	push af
 	ld a, b
 	cp $72
-	call z, UpdateGBCPal_BGP
+	call z, UpdateCGBPal_BGP
 	pop af
 	call SlidePlayerHeadLeft
 	ld a, c
@@ -913,8 +913,8 @@ ReplaceFaintedEnemyMon:
 	ldpal a, SHADE_BLACK, SHADE_DARK, SHADE_LIGHT, SHADE_WHITE
 	ld [rOBP0], a
 	ld [rOBP1], a
-	call UpdateGBCPal_OBP0
-	call UpdateGBCPal_OBP1
+	call UpdateCGBPal_OBP0
+	call UpdateCGBPal_OBP1
 	callfar DrawEnemyPokeballs
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
@@ -2137,9 +2137,9 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
-	ld [hl], D_RIGHT | A_BUTTON ; wMenuWatchedKeys
+	ld [hl], PAD_RIGHT | PAD_A ; wMenuWatchedKeys
 	call HandleMenuInput
-	bit BIT_D_RIGHT, a
+	bit B_PAD_RIGHT, a
 	jr nz, .rightColumn
 	jr .AButtonPressed ; the A button was pressed
 .rightColumn ; put cursor in right column of menu
@@ -2170,10 +2170,10 @@ DisplayBattleMenu::
 	inc hl
 	ld a, $1
 	ld [hli], a ; wMaxMenuItem
-	ld a, D_LEFT | A_BUTTON
+	ld a, PAD_LEFT | PAD_A
 	ld [hli], a ; wMenuWatchedKeys
 	call HandleMenuInput
-	bit BIT_D_LEFT, a
+	bit B_PAD_LEFT, a
 	jr nz, .leftColumn ; if left was pressed, jump
 	ld a, [wCurrentMenuItem]
 	add $2 ; if we're in the right column, the actual id is +2
@@ -2397,12 +2397,12 @@ PartyMenuOrRockOrRun:
 	inc hl
 	ld a, $2
 	ld [hli], a ; wMaxMenuItem
-	ld a, B_BUTTON | A_BUTTON
+	ld a, PAD_B | PAD_A
 	ld [hli], a ; wMenuWatchedKeys
 	xor a
 	ld [hl], a ; wLastMenuItem
 	call HandleMenuInput
-	bit BIT_B_BUTTON, a
+	bit B_PAD_B, a
 	jr nz, .partyMonDeselected ; if B was pressed, jump
 ; A was pressed
 	call PlaceUnfilledArrowMenuCursor
@@ -2601,10 +2601,10 @@ MoveSelectionMenu:
 	ld [hli], a ; wMaxMenuItem
 	ld a, [wMoveMenuType]
 	dec a
-	ld b, D_UP | D_DOWN | A_BUTTON
+	ld b, PAD_UP | PAD_DOWN | PAD_A
 	jr z, .matchedkeyspicked
 	dec a
-	ld b, D_UP | D_DOWN | A_BUTTON | B_BUTTON
+	ld b, PAD_UP | PAD_DOWN | PAD_A | PAD_B
 	jr z, .matchedkeyspicked
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
@@ -2612,9 +2612,9 @@ MoveSelectionMenu:
 	; Disable left, right, and START buttons in regular battles.
 	ld a, [wStatusFlags7]
 	bit BIT_TEST_BATTLE, a
-	ld b, D_UP | D_DOWN | A_BUTTON | B_BUTTON | SELECT
+	ld b, ~(PAD_LEFT | PAD_RIGHT | PAD_START)
 	jr z, .matchedkeyspicked
-	ld b, D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON | SELECT | START
+	ld b, PAD_CTRL_PAD | PAD_BUTTONS
 .matchedkeyspicked
 	ld a, b
 	ld [hli], a ; wMenuWatchedKeys
@@ -2660,13 +2660,13 @@ SelectMenuItem:
 	call HandleMenuInput
 	ld hl, hUILayoutFlags
 	res BIT_DOUBLE_SPACED_MENU, [hl]
-	bit BIT_D_UP, a
+	bit B_PAD_UP, a
 	jp nz, SelectMenuItem_CursorUp
-	bit BIT_D_DOWN, a
+	bit B_PAD_DOWN, a
 	jp nz, SelectMenuItem_CursorDown
-	bit BIT_SELECT, a
+	bit B_PAD_SELECT, a
 	jp nz, SwapMovesInMenu
-	bit BIT_B_BUTTON, a
+	bit B_PAD_B, a
 	push af
 	xor a
 	ld [wMenuItemToSwap], a
@@ -6472,9 +6472,9 @@ LoadPlayerBackPic:
 	ld de, vBackPic
 	call InterlaceMergeSpriteBuffers
 	ld a, $a
-	ld [MBC1SRamEnable], a
+	ld [rRAMG], a
 	xor a
-	ld [MBC1SRamBank], a
+	ld [rRAMB], a
 	ld hl, vSprites
 	ld de, sSpriteBuffer1
 	ldh a, [hLoadedROMBank]
@@ -6482,7 +6482,7 @@ LoadPlayerBackPic:
 	ld c, 7 * 7
 	call CopyVideoData
 	xor a
-	ld [MBC1SRamEnable], a
+	ld [rRAMG], a
 	ld a, $31
 	ldh [hStartTileID], a
 	hlcoord 1, 5
@@ -6883,7 +6883,7 @@ DetermineWildOpponent:
 	bit BIT_DEBUG_MODE, a
 	jr z, .notDebugMode
 	ldh a, [hJoyHeld]
-	bit BIT_B_BUTTON, a ; disable wild encounters
+	bit B_PAD_B, a ; disable wild encounters
 	ret nz
 .notDebugMode
 	ld a, [wNumberOfNoRandomBattleStepsLeft]
@@ -6892,7 +6892,7 @@ DetermineWildOpponent:
 	callfar TryDoWildEncounter
 	ret nz
 InitBattleCommon:
-	callfar GBCSetCPU1xSpeed
+	callfar CGBSetCPU1xSpeed
 	ld a, [wMapPalOffset]
 	push af
 	ld hl, wLetterPrintingDelayFlags

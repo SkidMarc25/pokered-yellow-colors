@@ -57,25 +57,7 @@ Ship_GFX::          INCBIN "gfx/tilesets/ship.2bpp"
 Ship_Block::        INCBIN "gfx/blocksets/ship.bst"
 Lab_GFX::           INCBIN "gfx/tilesets/lab.2bpp"
 Lab_Block::         INCBIN "gfx/blocksets/lab.bst"
-
-SECTION "Tilesets 4", ROMX
-
 Club_GFX::          INCBIN "gfx/tilesets/club.2bpp"
 Club_Block::        INCBIN "gfx/blocksets/club.bst"
 Underground_GFX::   INCBIN "gfx/tilesets/underground.2bpp"
 Underground_Block:: INCBIN "gfx/blocksets/underground.bst"
-City_GFX::		    INCBIN "gfx/tilesets/city.2bpp"
-City_Block::		INCBIN "gfx/blocksets/city.bst"
-Port_GFX::	    INCBIN "gfx/tilesets/port.2bpp"
-Port_Block::	INCBIN "gfx/blocksets/port.bst"
-
-SECTION "Tilesets 5", ROMX
-
-Burned_GFX::	    INCBIN "gfx/tilesets/burned.2bpp"
-Burned_Block::	INCBIN "gfx/blocksets/burned.bst"
-Pewter_GFX::	    INCBIN "gfx/tilesets/pewter.2bpp"
-Pewter_Block::	INCBIN "gfx/blocksets/pewter.bst"
-Sewer_GFX::	    INCBIN "gfx/tilesets/sewer.2bpp"
-Sewer_Block::	INCBIN "gfx/blocksets/sewer.bst"
-Zoo_GFX::	    INCBIN "gfx/tilesets/zoo.2bpp"
-Zoo_Block::	INCBIN "gfx/blocksets/zoo.bst"

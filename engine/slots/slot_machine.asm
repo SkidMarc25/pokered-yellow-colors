@@ -27,7 +27,7 @@ PromptUserToPlaySlots:
 	call GBPalNormal
 	ld a, $e4
 	ldh [rOBP0], a
-	call UpdateGBCPal_OBP0
+	call UpdateCGBPal_OBP0
 	ld hl, wStatusFlags5
 	set BIT_NO_TEXT_DELAY, [hl]
 	xor a
@@ -69,7 +69,7 @@ MainSlotMachineLoop:
 	call PrintText
 	call SaveScreenTilesToBuffer1
 .loop
-	ld a, A_BUTTON | B_BUTTON
+	ld a, PAD_A | PAD_B
 	ld [wMenuWatchedKeys], a
 	ld a, 2
 	ld [wMaxMenuItem], a
@@ -89,7 +89,7 @@ MainSlotMachineLoop:
 	ld de, CoinMultiplierSlotMachineText
 	call PlaceString
 	call HandleMenuInput
-	and B_BUTTON
+	and PAD_B
 	jp nz, LoadScreenTilesFromBuffer1
 	ld a, [wCurrentMenuItem]
 	ld b, a
@@ -459,7 +459,7 @@ SlotMachine_CheckForMatches:
 	ldh a, [rBGP]
 	xor $40
 	ldh [rBGP], a
-	call UpdateGBCPal_BGP
+	call UpdateCGBPal_BGP
 	ld c, 5
 	call DelayFrames
 	dec b
@@ -476,7 +476,7 @@ SlotMachine_CheckForMatches:
 	call SlotMachine_PrintPayoutCoins
 	ld a, $e4
 	ldh [rOBP0], a
-	call UpdateGBCPal_OBP0
+	call UpdateCGBPal_OBP0
 	jp .done
 
 SymbolLinedUpSlotMachineText:
@@ -702,7 +702,7 @@ SlotMachine_PayCoinsToPlayer:
 	ldh a, [rOBP0]
 	xor $40 ; make the slot wheel symbols flash
 	ldh [rOBP0], a
-	call UpdateGBCPal_OBP0
+	call UpdateCGBPal_OBP0
 	ld a, 5
 .skip1
 	ld [wAnimCounter], a
@@ -831,7 +831,7 @@ SlotMachine_HandleInputWhileWheelsSpin:
 	call DelayFrame
 	call JoypadLowSensitivity
 	ldh a, [hJoy5]
-	and A_BUTTON
+	and PAD_A
 	ret z
 	ld hl, wStoppingWhichSlotMachineWheel
 	ld a, [hl]

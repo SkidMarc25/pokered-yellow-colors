@@ -68,22 +68,3 @@ Facility_Coll::
 
 Plateau_Coll::
 	coll_tiles $1b, $23, $2c, $2d, $3b, $45
-
-City_Coll::
-	coll_tiles $1B
-
-Port_Coll::
-	coll_tiles $1B
-
-Burned_Coll::
-	coll_tiles $1B
-
-Pewter_Coll::
-	coll_tiles $1B
-
-Sewer_Coll::
-	coll_tiles $1B
-
-Zoo_Coll::
-	coll_tiles $1B
-
