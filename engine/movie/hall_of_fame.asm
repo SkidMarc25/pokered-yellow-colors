@@ -196,9 +196,13 @@ HoFLoadPlayerPics:
 	ld de, RedPicBack
 	ld a, BANK(RedPicBack)
 	call UncompressSpriteFromDE
-	predef ScaleSpriteByTwo
+	;predef ScaleSpriteByTwo
+	ld a, $66
 	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers
+	;call InterlaceMergeSpriteBuffers
+	push de
+	jp LoadUncompressedBackSprite
+	nop
 	ld c, $1
 
 HoFLoadMonPlayerPicTileIDs:
