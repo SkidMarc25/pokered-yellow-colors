@@ -6,11 +6,11 @@ Route2WildMons:
 	db  4, RATTATA
 	db  5, PIDGEY
 IF DEF(_RED)
-	db  3, WEEDLE
-	db  2, RATTATA
+	db  3, CATERPIE
+	db  2, WEEDLE
 	db  5, RATTATA
-	db  4, WEEDLE
-	db  5, WEEDLE
+	db  4, JIGGLYPUFF
+	db  5, JIGGLYPUFF
 ENDC
 IF DEF(_BLUE)
 	db  3, CATERPIE
