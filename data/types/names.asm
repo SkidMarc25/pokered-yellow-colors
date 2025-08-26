@@ -36,7 +36,7 @@ ENDR
 .Water:    db "WATER@"
 .Grass:    db "GRASS@"
 .Electric: db "ELECTRIC@"
-.Psychic:  db "PSYCHIC@"
+.Psychic:  db "ESPER@"
 .Ice:      db "ICE@"
 .Ground:   db "GROUND@"
 .Rock:     db "ROCK@"
