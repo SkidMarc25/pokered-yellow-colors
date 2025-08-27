@@ -642,15 +642,15 @@ BrunoData:
 
 BrockData:
 	db $FF, 12, GEODUDE, 14, ONIX, 0
-	; Challenge Mode db $FF, 13, OMANYTE, 14, KABUTO, 0
+	;db $FF, 13, OMANYTE, 14, KABUTO, 0 ; Challenge Mode
 
 MistyData:
-	db $FF, 18, STARYU, 19, PSYDUCK 21, STARMIE, 0
-	; Challenge Modedb $FF, 19, SEEL, 20, CLEFAIRY, 22, SEADRA, 0
+	db $FF, 18, STARYU, 19, PSYDUCK, 21, STARMIE, 0
+	;db $FF, 19, SEEL, 20, CLEFAIRY, 22, SEADRA, 0 ; Challenge Mode
 
 LtSurgeData:
 	db $FF, 21, VOLTORB, 18, MAGNEMITE, 24, RAICHU, 0
-	; Challenge Mode db $FF, 23, VOLTORB, 20, MAGNEMITE, 19, PORYGON, 24, ELECTABUZZ, 0
+	;db $FF, 23, VOLTORB, 20, MAGNEMITE, 19, PORYGON, 24, ELECTABUZZ, 0 ; Challenge Mode
 
 ErikaData:
 	db $FF, 29, VICTREEBEL, 24, TANGELA, 29, VILEPLUME, 0

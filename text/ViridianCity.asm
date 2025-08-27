@@ -179,3 +179,8 @@ _ViridianCityGymLockedText::
 	text "The GYM's doors"
 	line "are locked..."
 	done
+
+_ViridianCitySchoolSignText::
+	text "#MON Trainer"
+	line "School"
+	done

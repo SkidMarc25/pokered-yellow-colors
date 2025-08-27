@@ -28,7 +28,7 @@ BluesHouseDaisySittingText:
 	text_asm
 	CheckEvent EVENT_GOT_TOWN_MAP
 	jr nz, .got_town_map
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_BATTLED_RIVAL_IN_OAKS_LAB
 	jr nz, .give_town_map
 	ld hl, BluesHouseDaisyRivalAtLabText
 	call PrintText
