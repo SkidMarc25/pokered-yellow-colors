@@ -152,4 +152,35 @@ MonsterPalettes:
 	db PAL_BROWNMON  ; DRAGONITE
 	db PAL_PURPLEMON    ; MEWTWO
 	db PAL_PINKMON    ; MEW
+	db PAL_PURPLEMON    ; MEW
+	db PAL_YELLOWMON    ; MEW
+	db PAL_YELLOWMON    ; MEW
+	db PAL_PINKMON    ; MEW
+	db PAL_GREENMON    ; MEW
+	db PAL_YELLOWMON    ; MEW
+	db PAL_CYANMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_BLUEMON    ; MEW
+	db PAL_GREENMON    ; MEW
+	db PAL_PINKMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_PURPLEMON    ; MEW
+	db PAL_BLUEMON    ; MEW
+	db PAL_BROWNMON    ; MEW
+	db PAL_PURPLEMON    ; MEW
+	db PAL_BLUEMON    ; MEW
+	db PAL_BROWNMON    ; MEW
+	db PAL_PINKMON    ; MEW
+	db PAL_GRAYMON    ; MEW
+	db PAL_REDMON    ; MEW
+	db PAL_PURPLEMON    ; MEW
+	db PAL_GRAYMON    ; MEW
+	db PAL_BROWNMON    ; MEW
+	db PAL_BLUEMON    ; MEW
+	db PAL_BROWNMON    ; MEW
+	db PAL_PURPLEMON    ; MEW
+
 	assert_table_length NUM_POKEMON + 1

@@ -40,8 +40,8 @@ EvosMovesPointerTable:
 	dw BlastoiseEvosMoves
 	dw PinsirEvosMoves
 	dw TangelaEvosMoves
-	dw MissingNo1FEvosMoves
-	dw MissingNo20EvosMoves
+	dw CrobatEvosMoves
+	dw ElectivireEvosMoves
 	dw GrowlitheEvosMoves
 	dw OnixEvosMoves
 	dw FearowEvosMoves
@@ -59,26 +59,26 @@ EvosMovesPointerTable:
 	dw PsyduckEvosMoves
 	dw DrowzeeEvosMoves
 	dw GolemEvosMoves
-	dw MissingNo32EvosMoves
+	dw ElekidEvosMoves
 	dw MagmarEvosMoves
-	dw MissingNo34EvosMoves
+	dw EspeonEvosMoves
 	dw ElectabuzzEvosMoves
 	dw MagnetonEvosMoves
 	dw KoffingEvosMoves
-	dw MissingNo38EvosMoves
+	dw FomantisEvosMoves
 	dw MankeyEvosMoves
 	dw SeelEvosMoves
 	dw DiglettEvosMoves
 	dw TaurosEvosMoves
-	dw MissingNo3DEvosMoves
-	dw MissingNo3EEvosMoves
-	dw MissingNo3FEvosMoves
+	dw GirafarigEvosMoves
+	dw GlaceonEvosMoves
+	dw HoundoomEvosMoves
 	dw FarfetchdEvosMoves
 	dw VenonatEvosMoves
 	dw DragoniteEvosMoves
-	dw MissingNo43EvosMoves
-	dw MissingNo44EvosMoves
-	dw MissingNo45EvosMoves
+	dw HoundourEvosMoves
+	dw KingdraEvosMoves
+	dw LeafeonEvosMoves
 	dw DoduoEvosMoves
 	dw PoliwagEvosMoves
 	dw JynxEvosMoves
@@ -88,23 +88,23 @@ EvosMovesPointerTable:
 	dw DittoEvosMoves
 	dw MeowthEvosMoves
 	dw KrabbyEvosMoves
-	dw MissingNo4FEvosMoves
-	dw MissingNo50EvosMoves
-	dw MissingNo51EvosMoves
+	dw LurantisEvosMoves
+	dw MagbyEvosMoves
+	dw MagcargoEvosMoves
 	dw VulpixEvosMoves
 	dw NinetalesEvosMoves
 	dw PikachuEvosMoves
 	dw RaichuEvosMoves
-	dw MissingNo56EvosMoves
-	dw MissingNo57EvosMoves
+	dw MagmortarEvosMoves
+	dw MisdreavusEvosMoves
 	dw DratiniEvosMoves
 	dw DragonairEvosMoves
 	dw KabutoEvosMoves
 	dw KabutopsEvosMoves
 	dw HorseaEvosMoves
 	dw SeadraEvosMoves
-	dw MissingNo5EEvosMoves
-	dw MissingNo5FEvosMoves
+	dw MurkrowEvosMoves
+	dw NickitEvosMoves
 	dw SandshrewEvosMoves
 	dw SandslashEvosMoves
 	dw OmanyteEvosMoves
@@ -124,38 +124,38 @@ EvosMovesPointerTable:
 	dw WeedleEvosMoves
 	dw KakunaEvosMoves
 	dw BeedrillEvosMoves
-	dw MissingNo73EvosMoves
+	dw NoibatEvosMoves
 	dw DodrioEvosMoves
 	dw PrimeapeEvosMoves
 	dw DugtrioEvosMoves
 	dw VenomothEvosMoves
 	dw DewgongEvosMoves
-	dw MissingNo79EvosMoves
-	dw MissingNo7AEvosMoves
+	dw NoivernEvosMoves
+	dw PiloswineEvosMoves
 	dw CaterpieEvosMoves
 	dw MetapodEvosMoves
 	dw ButterfreeEvosMoves
 	dw MachampEvosMoves
-	dw MissingNo7FEvosMoves
+	dw Porygon2EvosMoves
 	dw GolduckEvosMoves
 	dw HypnoEvosMoves
 	dw GolbatEvosMoves
 	dw MewtwoEvosMoves
 	dw SnorlaxEvosMoves
 	dw MagikarpEvosMoves
-	dw MissingNo86EvosMoves
-	dw MissingNo87EvosMoves
+	dw SkarmoryEvosMoves
+	dw SlugmaEvosMoves
 	dw MukEvosMoves
-	dw MissingNo8AEvosMoves
+	dw SmoochumEvosMoves
 	dw KinglerEvosMoves
 	dw CloysterEvosMoves
-	dw MissingNo8CEvosMoves
+	dw SteelixEvosMoves
 	dw ElectrodeEvosMoves
 	dw ClefableEvosMoves
 	dw WeezingEvosMoves
 	dw PersianEvosMoves
 	dw MarowakEvosMoves
-	dw MissingNo92EvosMoves
+	dw SwinubEvosMoves
 	dw HaunterEvosMoves
 	dw AbraEvosMoves
 	dw AlakazamEvosMoves
@@ -165,11 +165,11 @@ EvosMovesPointerTable:
 	dw BulbasaurEvosMoves
 	dw VenusaurEvosMoves
 	dw TentacruelEvosMoves
-	dw MissingNo9CEvosMoves
+	dw TangrowthEvosMoves
 	dw GoldeenEvosMoves
 	dw SeakingEvosMoves
-	dw MissingNo9FEvosMoves
-	dw MissingNoA0EvosMoves
+	dw ThievulEvosMoves
+	dw UmbreonEvosMoves
 	dw MissingNoA1EvosMoves
 	dw MissingNoA2EvosMoves
 	dw PonytaEvosMoves
@@ -596,16 +596,30 @@ TangelaEvosMoves:
 	db 45, BODY_SLAM
 	db 0
 
-MissingNo1FEvosMoves:
+CrobatEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo20EvosMoves:
+ElectivireEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 GrowlitheEvosMoves:
@@ -853,10 +867,17 @@ GolemEvosMoves:
 	db 45, EXPLOSION
 	db 0
 
-MissingNo32EvosMoves:
+ElekidEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 MagmarEvosMoves:
@@ -872,10 +893,17 @@ MagmarEvosMoves:
 	db 52, FIRE_BLAST
 	db 0
 
-MissingNo34EvosMoves:
+EspeonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 ElectabuzzEvosMoves:
@@ -920,10 +948,17 @@ KoffingEvosMoves:
 	db 45, EXPLOSION
 	db 0
 
-MissingNo38EvosMoves:
+FomantisEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 MankeyEvosMoves:
@@ -982,22 +1017,43 @@ TaurosEvosMoves:
 	db 51, DOUBLE_EDGE
 	db 0
 
-MissingNo3DEvosMoves:
+GirafarigEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo3EEvosMoves:
+GlaceonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo3FEvosMoves:
+HoundoomEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 FarfetchdEvosMoves:
@@ -1044,22 +1100,43 @@ DragoniteEvosMoves:
 	db 70, HYPER_BEAM
 	db 0
 
-MissingNo43EvosMoves:
+HoundourEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo44EvosMoves:
+KingdraEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo45EvosMoves:
+LeafeonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 DoduoEvosMoves:
@@ -1177,22 +1254,43 @@ KrabbyEvosMoves:
 	db 45, GUILLOTINE
 	db 0
 
-MissingNo4FEvosMoves:
+LurantisEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo50EvosMoves:
+MagbyEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo51EvosMoves:
+MagcargoEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 VulpixEvosMoves:
@@ -1238,16 +1336,30 @@ RaichuEvosMoves:
 	db 40, JUMP_KICK
 	db 0
 
-MissingNo56EvosMoves:
+MagmortarEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo57EvosMoves:
+MisdreavusEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 DratiniEvosMoves:
@@ -1331,16 +1443,30 @@ SeadraEvosMoves:
 	db 51, HYDRO_PUMP
 	db 0
 
-MissingNo5EEvosMoves:
+MurkrowEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo5FEvosMoves:
+NickitEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 SandshrewEvosMoves:
@@ -1584,10 +1710,17 @@ BeedrillEvosMoves:
 	db 37, LUNGE
 	db 0
 
-MissingNo73EvosMoves:
+NoibatEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 DodrioEvosMoves:
@@ -1659,16 +1792,30 @@ DewgongEvosMoves:
 	db 54, HYDRO_PUMP
 	db 0
 
-MissingNo79EvosMoves:
+NoivernEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo7AEvosMoves:
+PiloswineEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 CaterpieEvosMoves:
@@ -1716,10 +1863,17 @@ MachampEvosMoves:
 	db 48, SUBMISSION
 	db 0
 
-MissingNo7FEvosMoves:
+Porygon2EvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 GolduckEvosMoves:
@@ -1794,16 +1948,30 @@ MagikarpEvosMoves:
 	db 15, TACKLE
 	db 0
 
-MissingNo86EvosMoves:
+SkarmoryEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNo87EvosMoves:
+SlugmaEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 MukEvosMoves:
@@ -1820,10 +1988,17 @@ MukEvosMoves:
 	db 51, ACID_ARMOR
 	db 0
 
-MissingNo8AEvosMoves:
+SmoochumEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 KinglerEvosMoves:
@@ -1846,10 +2021,17 @@ CloysterEvosMoves:
 	db 50, SPIKE_CANNON
 	db 0
 
-MissingNo8CEvosMoves:
+SteelixEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 ElectrodeEvosMoves:
@@ -1910,10 +2092,17 @@ MarowakEvosMoves:
 	db 48, BONEMERANG
 	db 0
 
-MissingNo92EvosMoves:
+SwinubEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 HaunterEvosMoves:
@@ -2034,10 +2223,17 @@ TentacruelEvosMoves:
 	db 52, HYDRO_PUMP
 	db 0
 
-MissingNo9CEvosMoves:
+TangrowthEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 GoldeenEvosMoves:
@@ -2069,16 +2265,30 @@ SeakingEvosMoves:
 	db 44, AGILITY
 	db 0
 
-MissingNo9FEvosMoves:
+ThievulEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
-MissingNoA0EvosMoves:
+UmbreonEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 15, STOMP
+	db 21, FURY_ATTACK
+	db 31, ROCK_TOMB
+	db 37, TAKE_DOWN
+	db 42, ROCK_SLIDE
+	db 48, HORN_DRILL
+	db 55, EARTHQUAKE
 	db 0
 
 MissingNoA1EvosMoves:

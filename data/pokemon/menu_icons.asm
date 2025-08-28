@@ -151,4 +151,34 @@ MonPartyData:
 	nybble ICON_SNAKE     ; Dragonite
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Crobat
+	nybble ICON_MON       ; Mew
+	nybble ICON_FAIRY       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_BUG       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_WATER       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_BUG       ; Mew
+	nybble ICON_FAIRY       ; Mew
+	nybble ICON_HELIX       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_BIRD       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_BALL       ; Mew
+	nybble ICON_BIRD       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_FAIRY       ; Mew
+	nybble ICON_SNAKE       ; Mew
+	nybble ICON_MON       ; Mew
+	nybble ICON_GRASS       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
+	nybble ICON_QUADRUPED       ; Mew
 	end_nybble_array NUM_POKEMON
