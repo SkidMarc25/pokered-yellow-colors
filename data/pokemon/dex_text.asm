@@ -290,21 +290,21 @@ _TangelaDexEntry::
 	dex
 
 _CrobatDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Its legs grew"
+	next "into a second set"
+	next "of wings that"
 
-	page "living in molten"
-	next "lava of 3,600"
+	page "let it fly at"
+	next "high speeds"
 	dex
 
 _ElectivireDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Generates so much"
+	next "electricity that"
+	next "it has to regularly"
 
-	page "living in molten"
-	next "lava of 3,600"
+	page "discharge to avoid"
+	next "hurting itself"
 	dex
 
 _GrowlitheDexEntry::
@@ -467,13 +467,12 @@ _GolemDexEntry::
 	dex
 
 _ElekidDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "To help with"
+	next "power generation"
+	next "it can spin its"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "arms and create"
+	next "additional charge"
 	dex
 
 _MagmarDexEntry::
@@ -487,13 +486,12 @@ _MagmarDexEntry::
 	dex
 
 _EspeonDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The morning Sun's"
+	next "warmth gives"
+	next "Espeon the"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "ability to read"
+	next "the future"
 	dex
 
 _ElectabuzzDexEntry::
@@ -526,13 +524,13 @@ _KoffingDexEntry::
 	dex
 
 _FomantisDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "They hide among"
+	next "flower beds"
+	next "hoping to catch"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "and eat bugs"
+	next "drawn to the"
+	next "flowers"
 	dex
 
 _MankeyDexEntry::
@@ -574,33 +572,31 @@ _TaurosDexEntry::
 	dex
 
 _GirafarigDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The second head"
+	next "has a small brain,"
+	next "it doesn't think"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "beyond biting"
+	next "anything close"
 	dex
 
 _GlaceonDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "On humid days"
+	next "the air around"
+	next "GLACEON will"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "start to cloud"
+	next "up and begin"
+	next "snowing"
 	dex
 
 _HoundoomDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Burns from"
+	next "HOUNDOOM fire"
+	next "are said to"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "never fully"
+	next "heal"
 	dex
 
 _FarfetchdDexEntry::
@@ -632,33 +628,33 @@ _DragoniteDexEntry::
 	dex
 
 _HoundourDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "They hunt in"
+	next "packs. For"
+	next "big prey they"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "work with the"
+	next "pack leader"
+	next "HOUNDOOM"
 	dex
 
 _KingdraDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Lives deep in"
+	next "the sea. If it"
+	next "is disturbed it"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "will create a"
+	next "whirlpool that"
+	next "sinks ships"
 	dex
 
 _LeafeonDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "It breath has"
+	next "healing proper-"
+	next "ties. In the fall"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "its leaves change"
+	next "color and fall"
+	next "off"
 	dex
 
 _DoduoDexEntry::
@@ -749,32 +745,32 @@ _KrabbyDexEntry::
 	dex
 
 _LurantisDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Disguises itself"
+	next "among flowers to"
+	next "ambush prey that"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "wander too close"
+	next "LURANTIS are"
+	next "deception pros"
 	dex
 
 _MagbyDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "If it gets"
+	next "excited it will"
+	next "start to drool"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "searing hot"
+	next "lava from its"
+	next "mouth"
 	dex
 
 _MagcargoDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The shell is"
+	next "easy to crack"
+	next "but hard to"
 
-	page "living in molten"
-	next "lava of 3,600"
+	page "destroy, it just"
+	next "melts together"
 	dex
 
 _VulpixDexEntry::
@@ -814,21 +810,21 @@ _RaichuDexEntry::
 	dex
 
 _MagmortarDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The air around"
+	next "MAGMORTAR is"
+	next "blisteringly hot."
 
-	page "living in molten"
-	next "lava of 3,600"
+	page "It launches balls"
+	next "of super hot fire"
 	dex
 
 _MisdreavusDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The air around"
+	next "MISDREAVUS is"
+	next "always chilly."
 
-	page "living in molten"
-	next "lava of 3,600"
+	page "They love to"
+	next "scare people"
 	dex
 
 _DratiniDexEntry::
@@ -891,23 +887,22 @@ _SeadraDexEntry::
 	dex
 
 _MurkrowDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Seen as a sign"
+	next "of bad luck by"
+	next "many. Murkrow"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "Love shiny things"
+	next "and often fight"
+	next "MEOWTH for them"
 	dex
 
 _NickitDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The bushy tail"
+	next "covers its tracks"
+	next "making it tricky"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "to follow after"
+	next "it robs you."
 	dex
 
 _SandshrewDexEntry::
@@ -1093,13 +1088,12 @@ _BeedrillDexEntry::
 	dex
 
 _NoibatDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Its large ears"
+	next "give NOIBAT"
+	next "excellent radar"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "for navigating"
+	next "pitch black caves"
 	dex
 
 _DodrioDexEntry::
@@ -1152,23 +1146,22 @@ _DewgongDexEntry::
 	dex
 
 _NoivernDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "It emits a"
+	next "sound that can"
+	next "make those who"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "hear it ill."
+	next "Can level fields"
+	next "with sound blasts"
 	dex
 
 _PiloswineDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Uses its tusks to"
+	next "dig through ice"
+	next "and snow while it"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "forages for food"
+	next "during the winter"
 	dex
 
 _CaterpieDexEntry::
@@ -1211,13 +1204,13 @@ _MachampDexEntry::
 	dex
 
 _Porygon2DexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Upgrades were"
+	next "made by SILPH"
+	next "to keep the"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "PORYGON program"
+	next "compatible with"
+	next "new technology"
 	dex
 
 _GolduckDexEntry::
@@ -1277,23 +1270,23 @@ _MagikarpDexEntry::
 	dex
 
 _SkarmoryDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "It slices through"
+	next "the air on its"
+	next "razor wings."
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "Discarded feathers"
+	next "used to be made"
+	next "into armor"
 	dex
 
 _SlugmaDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "When it cools"
+	next "down its skin"
+	next "hardens and chips"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "off. Medicines"
+	next "are made from"
+	next "shed shin"
 	dex
 
 _MukDexEntry::
@@ -1307,13 +1300,13 @@ _MukDexEntry::
 	dex
 
 _SmoochumDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Its lips connect"
+	next "to it memory node,"
+	next "as a result, it"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "kisses things to"
+	next "learn and remember"
+	next "them"
 	dex
 
 _KinglerDexEntry::
@@ -1337,13 +1330,13 @@ _CloysterDexEntry::
 	dex
 
 _SteelixDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "An ONIX that lives"
+	next "long enough will"
+	next "harden into a"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "STEELIX. They"
+	next "live deeper than"
+	next "humans can dig"
 	dex
 
 _ElectrodeDexEntry::
@@ -1395,13 +1388,13 @@ _MarowakDexEntry::
 	dex
 
 _SwinubDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Their sense of"
+	next "smell is excellent."
+	next "SWINUB are a"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "popular partner"
+	next "for people who"
+	next "hunt truffles"
 	dex
 
 _HaunterDexEntry::
@@ -1491,13 +1484,13 @@ _TentacruelDexEntry::
 	dex
 
 _TangrowthDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "The vines are"
+	next "similar to muscle"
+	next "fibers. TANGROWTH"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "can stretch and"
+	next "flex to maximize"
+	next "its strength"
 	dex
 
 _GoldeenDexEntry::
@@ -1521,23 +1514,23 @@ _SeakingDexEntry::
 	dex
 
 _ThievulDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "Master thieves."
+	next "Farmers loathe"
+	next "this wily bandit."
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "They are crafty"
+	next "and impossible"
+	next "to trick"
 	dex
 
 _UmbreonDexEntry::
-	text "Protected by an"
-	next "armor-like hide,"
-	next "it is capable of"
+	text "When the moon's"
+	next "light shines on"
+	next "UMBREON, it will"
 
-	page "living in molten"
-	next "lava of 3,600"
-	next "degrees"
+	page "secrete a strong"
+	next "poisonous grease"
+	next "to coat is fur"
 	dex
 
 _PonytaDexEntry::
