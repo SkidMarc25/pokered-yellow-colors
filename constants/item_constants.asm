@@ -207,6 +207,16 @@ DEF TM01 EQU const_value
 	add_tm ROCK_SLIDE   ; $F8
 	add_tm TRI_ATTACK   ; $F9 Swap for Fire Punch?
 	add_tm SUBSTITUTE   ; $FA
+	;add_tm SWEET_KISS   ; $FB
+	;add_tm DAZZLE       ; $FC
+	;add_tm MUD_SLAP     ; $FD
+	;add_tm POISON_JAB   ; $FE
+	;add_tm METAL_CLAW   ; $FF
+	;add_tm IRON_DEFENSE ; $FA
+	;add_tm FEINT_ATTACK ; $FA
+	;add_tm FIRE_PUNCH   ; $FA
+	;add_tm ICE_PUNCH    ; $FA
+	;add_tm THUNDERPUNCH ; $FA
 ASSERT NUM_TMS == const_value - TM01, "NUM_TMS ({d:NUM_TMS}) does not match the number of add_tm definitions"
 
 DEF NUM_TM_HM EQU NUM_TMS + NUM_HMS
