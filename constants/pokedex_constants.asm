@@ -172,6 +172,7 @@
 	const DEX_MAGMORTAR        ; 166
 	const DEX_MISDREAVUS        ; 167
 	const DEX_MURKROW        ; 168
+	const DEX_NICKIT        ; 169
 	const DEX_NOIBAT        ; 170
 	const DEX_NOIVERN        ; 171
 	const DEX_PILOSWINE        ; 172
