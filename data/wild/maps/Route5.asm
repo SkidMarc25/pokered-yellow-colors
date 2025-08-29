@@ -1,16 +1,16 @@
 Route5WildMons:
 	def_grass_wildmons 15 ; encounter rate
 IF DEF(_RED)
-	db 13, ODDISH
+	db 13, NICKIT
 	db 13, PIDGEY
-	db 15, PIDGEY
-	db 10, MANKEY
-	db 12, MANKEY
-	db 15, ODDISH
+	db 15, MEOWTH
+	db 10, ODDISH
+	db 12, FOMANTIS
+	db 15, BELLSPROUT
 	db 16, ODDISH
 	db 16, PIDGEY
-	db 14, MANKEY
-	db 16, MANKEY
+	db 14, HOUNDOUR
+	db 16, MEOWTH
 ENDC
 IF DEF(_BLUE)
 	db 13, BELLSPROUT
