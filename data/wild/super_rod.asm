@@ -46,8 +46,8 @@ SuperRodData:
 
 .Group2:
 	db 2
-	db 15, GOLDEEN
-	db 15, POLIWAG
+	db 35, POLIWHIRL
+	db 45, GYARADOS
 
 .Group3:
 	db 3
