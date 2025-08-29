@@ -2,13 +2,13 @@ Route4WildMons:
 	def_grass_wildmons 20 ; encounter rate
 	db 10, RATTATA
 	db 10, SPEAROW
-	db  8, RATTATA
+	db  8, PSYDUCK
 IF DEF(_RED)
-	db  6, EKANS
+	db  6, MANKEY
 	db  8, SPEAROW
 	db 10, EKANS
 	db 12, RATTATA
-	db 12, SPEAROW
+	db 12, PSYDUCK
 	db  8, EKANS
 	db 12, EKANS
 ENDC
