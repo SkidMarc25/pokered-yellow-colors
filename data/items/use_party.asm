@@ -2,6 +2,7 @@
 UsableItems_PartyMenu:
 	db MOON_STONE
 	db LINK_STONE
+	db ICE_STONE
 	db SUN_STONE
 	db ANTIDOTE
 	db BURN_HEAL

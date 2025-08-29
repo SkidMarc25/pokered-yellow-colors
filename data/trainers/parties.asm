@@ -33,7 +33,7 @@ TrainerDataPointers:
 	dw CooltrainerMData
 	dw CooltrainerFData
 	dw BrunoData
-	dw Data
+	dw CooltrainerFData
 	dw MistyData
 	dw LtSurgeData
 	dw ErikaData

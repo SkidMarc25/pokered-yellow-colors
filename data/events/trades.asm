@@ -19,9 +19,9 @@ TradeMons:
 	npctrade JIGGLYPUFF, SANDSHREW, TRADE_DIALOGSET_HAPPY,     "DUSTY" ; unused - add to Museum
 	npctrade PONYTA,     HORSEA,    TRADE_DIALOGSET_CASUAL,    "DRAKE" ; Cinnabar Labs - Move somewhere else - Route 10
 	npctrade SPEAROW,    FARFETCHD, TRADE_DIALOGSET_HAPPY,     "DUX" ; Vermilion City
-	npctrade SLOWPOKE,   LICKITUNG, TRADE_DIALOGSET_CASUAL,    "MARC" ; Route 18 Gate
-	npctrade POLIWAG,    SMOOCHUM,  TRADE_DIALOGSET_EVOLUTION, "MARINA" ; Cerulean City
-	npctrade GRAVELER,   MAGCARGO,  TRADE_DIALOGSET_EVOLUTION, "ESCARGOON" ; Cinnabar Labs - Move somewhere else
+	npctrade SLOWPOKE,   LICKITUNG, TRADE_DIALOGSET_CASUAL,    "SLURPS" ; Route 18 Gate
+	npctrade POLIWAG,    SMOOCHUM,  TRADE_DIALOGSET_HAPPY,     "MARINA" ; Cerulean City
+	npctrade GRAVELER,   MAGCARGO,  TRADE_DIALOGSET_CASUAL,    "ESCARGOON" ; Cinnabar Labs - Move somewhere else
 	npctrade MUK,        GOLDUCK,   TRADE_DIALOGSET_HAPPY,     "QUACKERS" ; Cinnabar Labs
 	npctrade NIDORAN_M,  NIDORAN_F, TRADE_DIALOGSET_HAPPY,     "SPOT" ; Route 5 Underground Entrance
 	assert_table_length NUM_NPC_TRADES

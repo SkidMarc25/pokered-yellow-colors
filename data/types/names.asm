@@ -11,6 +11,7 @@ TypeNames:
 	dw .Bug
 	dw .Dark
 	dw .Steel
+	dw .Dragon
 
 REPT UNUSED_TYPES_END - UNUSED_TYPES
 	dw .Normal
@@ -22,7 +23,6 @@ ENDR
 	dw .Electric
 	dw .Psychic
 	dw .Ice
-	dw .Dragon
 	dw .Ghost
 	dw .Fairy
 
@@ -34,17 +34,17 @@ ENDR
 .Poison:   db "POISON@"
 .Ground:   db "GROUND@"
 .Rock:     db "ROCK@"
-.Bird:     db "BIRD@"
+.Bird:     db "STATUS@"
 .Bug:      db "BUG@"
 .Dark:     db "DARK@"
 .Steel:    db "STEEL@"
+.Dragon:   db "DRAGON@"
 .Fire:     db "FIRE@"
 .Water:    db "WATER@"
 .Grass:    db "GRASS@"
 .Electric: db "ELECTRIC@"
 .Psychic:  db "ESPER@"
 .Ice:      db "ICE@"
-.Dragon:   db "DRAGON@"
 .Ghost:    db "GHOST@"
 .Fairy:    db "FAIRY@"
 

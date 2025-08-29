@@ -21,11 +21,11 @@ _Museum2FScientistText::
 	done
 
 _Museum2FBrunetteGirlText::
-	text "I want a PIKACHU!"
-	line "It's so cute!"
+	text "Isn't JIGGLYPUFF!"
+	line "just the cutest?"
 
-	para "I asked my Daddy"
-	line "to catch me one!"
+	para "I asked my Papa"
+	line "to get me one!"
 	done
 
 _Museum2FHikerText::

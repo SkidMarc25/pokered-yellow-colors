@@ -372,3 +372,7 @@ INCLUDE "data/sgb/bg_map_attributes.asm"
 INCLUDE "engine/gfx/bg_map_attributes.asm"
 INCLUDE "engine/cgb/cgb_cpu_speed.asm"
 INCLUDE "engine/gfx/scroll_gfx_horizontally.asm"
+
+SECTION "Engine Spillover", ROMX
+
+INCLUDE "engine/menus/item_descriptions.asm"
