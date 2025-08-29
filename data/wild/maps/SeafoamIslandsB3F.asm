@@ -13,15 +13,16 @@ IF DEF(_RED)
 	db 37, KINGLER
 ENDC
 IF DEF(_BLUE)
-	db 31, PSYDUCK
-	db 31, SEEL
-	db 33, PSYDUCK
-	db 33, SEEL
-	db 29, KRABBY
-	db 31, STARYU
-	db 31, KRABBY
-	db 29, STARYU
-	db 39, KINGLER
+	db 30, SHELLDER
+	db 30, KRABBY
+	db 32, STARYU
+	db 32, KRABBY
+	db 28, PSYDUCK
+	db 30, SEEL
+	db 30, PSYDUCK
+	db 28, SEEL
+	db 38, DEWGONG
+	db 37, KINGLER
 ENDC
 	end_grass_wildmons
 
