@@ -7,7 +7,7 @@ IF DEF(_RED)
 	db  9, DROWZEE
 	db 13, SPEAROW
 	db 13, DROWZEE
-	db 15, EKANS
+	db 15, VOLTORB
 ENDC
 IF DEF(_BLUE)
 	db 14, SANDSHREW
@@ -18,8 +18,8 @@ IF DEF(_BLUE)
 	db 13, DROWZEE
 	db 15, SANDSHREW
 ENDC
-	db 17, SPEAROW
-	db 11, DROWZEE
+	db 17, ELEKID
+	db 11, MAGBY
 	db 15, DROWZEE
 	end_grass_wildmons
 
