@@ -4,9 +4,9 @@ SeafoamIslands1FWildMons:
 IF DEF(_RED)
 	db 30, SLOWPOKE
 	db 30, SHELLDER
-	db 30, HORSEA
-	db 28, HORSEA
-	db 21, ZUBAT
+	db 30, SWINUB
+	db 28, SEEL
+	db 21, STARYU
 	db 29, GOLBAT
 	db 28, PSYDUCK
 	db 28, SHELLDER
