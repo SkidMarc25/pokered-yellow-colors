@@ -7,7 +7,7 @@ Route18WildMons:
 	db 25, FEAROW
 	db 26, PONYTA
 	db 28, THIEVUL
-	db 29, RATICATE
+	db 29, SKARMORY
 	db 27, FEAROW
 	db 29, FEAROW
 	end_grass_wildmons
