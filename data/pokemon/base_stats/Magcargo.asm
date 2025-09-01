@@ -15,8 +15,9 @@
 
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     EARTHQUAKE,        FISSURE,  REFLECT,      BIDE,         SWIFT,        \
+	     SKULL_BASH,   REST,         SUBSTITUTE,    SELFDESTRUCT, FIRE_BLAST,   \
+		 EXPLOSION,	ROCK_SLIDE,		HYPER_BEAM,		STRENGTH
 	; end
 
 	db BANK(MagcargoPicFront)

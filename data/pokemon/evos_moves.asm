@@ -209,7 +209,7 @@ RhydonEvosMoves:
 	db 15, STOMP
 	db 21, FURY_ATTACK
 	db 31, ROCK_TOMB
-	db 37, TAKE_DOWN
+	db 37, DOUBLE_EDGE
 	db 42, ROCK_SLIDE
 	db 48, HORN_DRILL
 	db 55, EARTHQUAKE
@@ -588,7 +588,7 @@ TangelaEvosMoves:
 	db 0
 ; Learnset
 	db 14, ABSORB
-	db 18, BIND
+	db 18, SLAM
 	db 23, MEGA_DRAIN
 	db 28, POISONPOWDER
 	db 30, STUN_SPORE
@@ -1134,7 +1134,7 @@ KingdraEvosMoves:
 	db 17, LEER
 	db 23, BUBBLEBEAM
 	db 29, FOCUS_ENERGY
-	db 32, POISON_JAB
+	db 32, FLAMETHROWER
 	db 37, DRAGON_RAGE
 	db 41, AGILITY
 	db 51, HYDRO_PUMP
@@ -1496,8 +1496,8 @@ SandshrewEvosMoves:
 	db EVOLVE_LEVEL, 22, SANDSLASH
 	db 0
 ; Learnset
-	db 14, MUD_SLAP
-	db 18, FURY_SWIPES
+	db 12, MUD_SLAP
+	db 16, FURY_SWIPES
 	db 23, DIG
 	db 27, SLASH
 	db 31, METAL_CLAW

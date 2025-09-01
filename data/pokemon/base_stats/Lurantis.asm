@@ -14,9 +14,10 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm RAZOR_WIND,        SWORDS_DANCE,    TOXIC,    DOUBLE_EDGE,  HYPER_BEAM,         \
+	     COUNTER,        RAGE,  MEGA_DRAIN,      SOLARBEAM,         MIMIC,        \
+	     DOUBLE_TEAM,   REFLECT,         BIDE,       SWIFT, 	REST, \
+		 SUBSTITUTE, 	CUT, 	FLASH
 	; end
 
 	db BANK(LurantisPicFront)

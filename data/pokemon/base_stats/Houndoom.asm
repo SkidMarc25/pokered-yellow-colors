@@ -14,9 +14,10 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm TOXIC,        SUBSTITUTE,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
+	     PSYCHIC_M,    DIG,           MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     BIDE,         FIRE_BLAST,    SWIFT,        SKULL_BASH,   REST,          \
+	     HYPER_BEAM
 	; end
 
 	db BANK(HoundoomPicFront)

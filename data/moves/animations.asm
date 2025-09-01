@@ -1098,8 +1098,8 @@ RestAnim:
 	db -1 ; end
 
 RockSlideAnim:
-	battle_anim SEISMIC_TOSS, SUBANIM_0_ROCK_FALL, 0, 4
-	battle_anim EARTHQUAKE, SUBANIM_0_ROCK_FALL, 0, 4
+	battle_anim ROCK_THROW, SUBANIM_0_ROCK_FALL, 0, 4
+	battle_anim ROCK_THROW, SUBANIM_0_ROCK_FALL, 0, 4
 	db -1 ; end
 
 HyperFangAnim:

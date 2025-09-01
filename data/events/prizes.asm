@@ -31,21 +31,21 @@ ENDC
 
 PrizeMenuMon2Entries:
 IF DEF(_RED)
-	db MAGMAR
-	db ELECTABUZZ
+	db SLOWPOKE
+	db DRATINI
 ENDC
 IF DEF(_BLUE)
 	db PINSIR
 	db DRATINI
 ENDC
-	db JYNX
+	db EEVEE
 	db "@"
 
 PrizeMenuMon2Cost:
 IF DEF(_RED)
+	bcd2 4500
 	bcd2 6500
-	bcd2 6500
-	bcd2 6500
+	bcd2 7000
 ENDC
 IF DEF(_BLUE)
 	bcd2 2500

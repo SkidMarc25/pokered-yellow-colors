@@ -16,7 +16,9 @@
 	; tm/hm learnset
 	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
 	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	     SKULL_BASH,   REST,         SUBSTITUTE,   MEGA_KICK,    HYPER_BEAM,   \
+		 THUNDERBOLT,  EARTHQUAKE,   FISSURE,      PSYCHIC_M,    TELEPORT,     \
+		 TRI_ATTACK
 	; end
 
 	db BANK(GirafarigPicFront)

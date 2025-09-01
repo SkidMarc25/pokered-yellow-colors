@@ -36,7 +36,7 @@ DEF FIRST_ROUTE_MAP EQU const_value
 	map_const ROUTE_4,                       45,  9 ; $0F
 	map_const ROUTE_5,                       10, 18 ; $10
 	map_const ROUTE_6,                       10, 18 ; $11
-	map_const ROUTE_7,                       10,  9 ; $12
+	map_const ROUTE_7,                       10, 18 ; $12
 	map_const ROUTE_8,                       30,  9 ; $13
 	map_const ROUTE_9,                       30,  9 ; $14
 	map_const ROUTE_10,                      10, 36 ; $15
@@ -62,7 +62,7 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const OAKS_LAB,                       5,  6 ; $28
 	map_const VIRIDIAN_POKECENTER,            7,  4 ; $29
 	map_const VIRIDIAN_MART,                  4,  4 ; $2A
-	map_const VIRIDIAN_SCHOOL_HOUSE,          4,  4 ; $2B
+	map_const VIRIDIAN_SCHOOL_HOUSE,          6,  4 ; $2B
 	map_const VIRIDIAN_NICKNAME_HOUSE,        4,  4 ; $2C
 	map_const VIRIDIAN_GYM,                  10,  9 ; $2D
 	map_const DIGLETTS_CAVE_ROUTE_2,          4,  4 ; $2E

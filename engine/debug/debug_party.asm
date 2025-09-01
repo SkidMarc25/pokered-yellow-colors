@@ -23,7 +23,7 @@ IF DEF(_DEBUG)
 ELSE
 	db MEW, 20
 ENDC
-	db JOLTEON, 56
+	db THIEVUL, 56
 	db DUGTRIO, 56
 	db ARTICUNO, 57
 IF DEF(_DEBUG)
@@ -68,7 +68,7 @@ IF DEF(_DEBUG)
 
 	; Jolteon gets Thunderbolt.
 	ld hl, wPartyMon3Moves + 3
-	ld a, THUNDERBOLT
+	ld a, DRAGON_CLAW
 	ld [hl], a
 	ld hl, wPartyMon3PP + 3
 	ld a, 15
@@ -76,7 +76,7 @@ IF DEF(_DEBUG)
 
 	; Articuno gets Fly.
 	ld hl, wPartyMon5Moves
-	ld a, FLY
+	ld a, ROCK_SLIDE
 	ld [hl], a
 	ld hl, wPartyMon5PP
 	ld a, 15

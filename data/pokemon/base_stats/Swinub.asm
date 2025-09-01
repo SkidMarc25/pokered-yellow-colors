@@ -14,9 +14,10 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm STRENGTH, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
+	     ICE_BEAM,   SEISMIC_TOSS, RAGE,         EARTHQUAKE,   FISSURE,      \
+	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         BLIZZARD,   \
+	     SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   WATER_GUN
 	; end
 
 	db BANK(SwinubPicFront)

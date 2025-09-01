@@ -14,9 +14,10 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm TOXIC,        RAGE,         MEGA_DRAIN,   THUNDERBOLT,  THUNDER,      \
+	     PSYCHIC_M,    MIMIC,        DOUBLE_TEAM,  BIDE,         SELFDESTRUCT, \
+	     DREAM_EATER,  REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE,	\
+		 HYPER_BEAM,	TELEPORT,	THUNDER_WAVE,	TRI_ATTACK,	FLASH
 	; end
 
 	db BANK(MisdreavusPicFront)
